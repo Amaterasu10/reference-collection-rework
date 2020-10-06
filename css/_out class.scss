@@ -1,0 +1,44 @@
+.close {
+  display: none;
+}
+
+.open {
+  display: block;
+}
+
+.open-title {
+  display: block;
+  font-size: 3.122rem;
+  width: 90%;
+  margin: 0 auto;
+  background-color: #1d1c1c;
+  color: white;
+  text-align: center;
+  position: fixed;
+  opacity: 90%;
+  z-index: 1;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.open-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  grid-gap: 1.625rem;
+  padding: 4.6875rem 1.25rem 1.25rem;
+  min-height: 100vh;
+}
+
+.title {
+  font-size: 3.125rem;
+  width: 90%;
+  margin: 0 auto;
+  background-color: #1d1c1c;
+  color: white;
+  text-align: center;
+  position: fixed;
+  opacity: 90%;
+  z-index: 1;
+}
