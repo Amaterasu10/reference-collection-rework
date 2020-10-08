@@ -8,10 +8,11 @@ header {
   z-index: 3;
   box-shadow: 1px 1px 5px black;
   min-height: 72px;
+  max-height: 72px;
 
   h1 {
-    font-family: "Lemonada", cursive;
-    font-size: 2.25rem;
+    font-family: $secondary-font;
+    font-size: 3.68vh;
     padding-left: 2rem;
     text-shadow: 1px 1px 1px black;
 
