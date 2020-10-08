@@ -18,6 +18,10 @@ header {
     a {
       text-decoration: none;
       color: transparent;
+
+      &:hover {
+        color: white;
+      }
     }
   }
 
