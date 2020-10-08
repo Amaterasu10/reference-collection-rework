@@ -60,6 +60,7 @@ h2 {
   padding: 4.6875rem 1.25rem 1.25rem;
   min-height: 100vh;
 }
+
 /* queries
 =============================================================================================================== */
 
@@ -262,13 +263,6 @@ img#modal-img {
 .grid-container {
   background-color: #2e2c2c;
   margin-top: 72px;
-}
-
-.grid {
-  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
-  grid-gap: 1.625rem;
-  padding: 4.6875rem 1.25rem 1.25rem;
-  min-height: 100vh;
 }
 
 .open-grid img {

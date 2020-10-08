@@ -23,12 +23,44 @@ h2 {
   line-height: 1.2;
 }
 
-.close {
-  display: none;
+.no-scroll {
+  overflow: hidden;
 }
 
-.open {
-  display: block;
+.title {
+  font-size: 3.125rem;
+  width: 90%;
+  margin: 0 auto;
+  background-color: #1d1c1c;
+  color: white;
+  text-align: center;
+  position: fixed;
+  opacity: 90%;
+  z-index: 1;
+}
+
+.open-grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(15rem, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  grid-gap: 1.625rem;
+  padding: 4.6875rem 1.25rem 1.25rem;
+  min-height: 100vh;
+}
+
+.open-grid img {
+  width: 100%;
+  min-height: 19.6875rem;
+  max-height: 19.6875rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.open-grid img:hover {
+  -webkit-transform: scale(1.02, 1.02);
+          transform: scale(1.02, 1.02);
+  cursor: pointer;
 }
 
 .open-title {
@@ -44,30 +76,12 @@ h2 {
   z-index: 1;
 }
 
-.no-scroll {
-  overflow: hidden;
+.close {
+  display: none;
 }
 
-.open-grid {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (minmax(15rem, 1fr))[auto-fill];
-      grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
-  grid-gap: 1.625rem;
-  padding: 4.6875rem 1.25rem 1.25rem;
-  min-height: 100vh;
-}
-
-.title {
-  font-size: 3.125rem;
-  width: 90%;
-  margin: 0 auto;
-  background-color: #1d1c1c;
-  color: white;
-  text-align: center;
-  position: fixed;
-  opacity: 90%;
-  z-index: 1;
+.open {
+  display: block;
 }
 
 header {
@@ -98,6 +112,10 @@ header h1 {
 header h1 a {
   text-decoration: none;
   color: transparent;
+}
+
+header h1 a:hover {
+  color: white;
 }
 
 header nav {
@@ -228,6 +246,11 @@ header nav li a:hover {
   margin: 4.5rem auto 3.25rem;
 }
 
+#index-main #grid-container {
+  background-color: #2e2c2c;
+  margin-top: 72px;
+}
+
 .out-mains {
   background-color: #1d1c1c;
   margin: 4.5rem 0 0;
@@ -247,5 +270,24 @@ header nav li a:hover {
 
 .out-mains section p {
   margin: 1.5em 1em;
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: black;
+  width: 100%;
+}
+
+.contacts {
+  margin-left: auto;
+  margin-right: 50px;
+}
+
+.contacts li {
+  display: inline-block;
+  color: white;
+  padding: 1.25rem;
 }
 /*# sourceMappingURL=styles.css.map */
