@@ -1,0 +1,55 @@
+.no-scroll {
+  overflow: hidden;
+}
+
+.title {
+  font-size: 3.125rem;
+  width: 90%;
+  margin: 0 auto;
+  background-color: #1d1c1c;
+  color: white;
+  text-align: center;
+  position: fixed;
+  opacity: 90%;
+  z-index: 1;
+}
+
+.open-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  grid-gap: 1.625rem;
+  padding: 4.6875rem 1.25rem 1.25rem;
+  min-height: 100vh;
+}
+
+.open-grid img {
+  width: 100%;
+  min-height: 19.6875rem;
+  max-height: 19.6875rem;
+  object-fit: cover;
+}
+.open-grid img:hover {
+  transform: scale(1.02, 1.02);
+  cursor: pointer;
+}
+
+.open-title {
+  display: block;
+  font-size: 3.122rem;
+  width: 90%;
+  margin: 0 auto;
+  background-color: #1d1c1c;
+  color: white;
+  text-align: center;
+  position: fixed;
+  opacity: 90%;
+  z-index: 1;
+}
+
+.close {
+  display: none;
+}
+
+.open {
+  display: block;
+}

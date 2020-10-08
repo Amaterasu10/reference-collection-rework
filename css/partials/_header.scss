@@ -1,0 +1,47 @@
+header {
+  position: fixed;
+  display: inline-flex;
+  flex-flow: row wrap;
+  top: 0;
+  width: 100%;
+  background-color: #003cff;
+  z-index: 3;
+  box-shadow: 1px 1px 5px black;
+  min-height: 72px;
+
+  h1 {
+    font-family: "Lemonada", cursive;
+    font-size: 2.25rem;
+    padding-left: 2rem;
+    text-shadow: 1px 1px 1px black;
+
+    a {
+      text-decoration: none;
+      color: transparent;
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+
+  nav {
+    align-self: center;
+    margin: 0px 62px 0px auto;
+
+    li {
+      padding: 0px 0.625rem;
+
+      a {
+        font-size: 1.375rem;
+        text-decoration: none;
+        color: transparent;
+        text-shadow: 1px 1px 1px black;
+
+        &:hover {
+          color: white;
+        }
+      }
+    }
+  }
+}

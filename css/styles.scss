@@ -1,0 +1,43 @@
+@import "./partials/global";
+@import "./partials/out class";
+@import "./partials/header";
+@import "./partials/modal";
+
+.btn {
+  border: 0;
+  position: fixed;
+  top: 40vh;
+  background-color: gray;
+  color: white;
+  font-size: 2.5rem;
+  padding: 1vw 1.5vw;
+
+  &:hover {
+    transform: scale(1.02, 1.02);
+    border: black 1px solid;
+    cursor: pointer;
+  }
+}
+
+.right-btn {
+  right: 0;
+}
+
+@import "./partials/mains";
+
+footer {
+  display: flex;
+  background-color: black;
+  width: 100%;
+}
+
+.contacts {
+  margin-left: auto;
+  margin-right: 50px;
+}
+
+.contacts li {
+  display: inline-block;
+  color: white;
+  padding: 1.25rem;
+}

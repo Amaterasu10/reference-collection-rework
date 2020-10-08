@@ -1,7 +1,7 @@
-const animepage = document.getElementsByClassName("anime-page")[0];
-const modelspage = document.getElementsByClassName("models-page")[0];
-const modelstitle = document.getElementsByClassName("models-title")[0];
-const animetitle = document.getElementsByClassName("anime-title")[0];
+const animepage = document.getElementById("anime-page");
+const modelspage = document.getElementById("models-page");
+const modelstitle = document.getElementById("models-title");
+const animetitle = document.getElementById("anime-title");
 
 const modalbox = () => {
   const body = document.getElementById("body");
@@ -19,16 +19,16 @@ const modalbox = () => {
   const closebtn = document.getElementById("modal-close-btn");
 
   const animepageA = Array.from(
-    document.querySelectorAll(".anime-page>.image")
+    document.querySelectorAll("#anime-page>.image")
   );
 
   const modelspageA = Array.from(
-    document.querySelectorAll(".models-page>.image")
+    document.querySelectorAll("#models-page>.image")
   );
 
   let currentindex;
 
-  for (image of animepageA) {
+  for (let image of animepageA) {
     image.addEventListener("click", function () {
       if (modal.classList == "close") {
         modal.classList.replace("close", "open");
@@ -39,7 +39,7 @@ const modalbox = () => {
     });
   }
 
-  for (image of modelspageA) {
+  for (let image of modelspageA) {
     image.addEventListener("click", function () {
       if (modal.classList == "close") {
         modal.classList.replace("close", "open");
