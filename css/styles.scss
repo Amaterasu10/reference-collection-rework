@@ -1,3 +1,4 @@
+@import "./partials/variables";
 @import "./partials/global";
 @import "./partials/out class";
 @import "./partials/header";
@@ -41,3 +42,5 @@ footer {
   color: white;
   padding: 1.25rem;
 }
+
+@import "./partials/mediaqueries";
