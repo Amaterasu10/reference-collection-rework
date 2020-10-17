@@ -6,7 +6,6 @@
 }
 
 html {
-  width: 100%;
   font-size: 16px;
   font-family: "Sniglet", cursive;
   background-color: #a7a5a5;
@@ -303,10 +302,14 @@ footer {
   }
   .open-title {
     font-size: 3.122rem;
+    width: 90%;
   }
   .open-grid img {
     min-height: 19.6875rem;
     max-height: 19.6875rem;
+  }
+  #index-main {
+    width: 90%;
   }
   #index-main #grid-container {
     background-color: #2e2c2c;
