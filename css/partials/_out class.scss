@@ -24,9 +24,10 @@
 
 .open-grid img {
   width: 100%;
-  min-height: 19.6875rem;
-  max-height: 19.6875rem;
+  min-height: 11.6875rem;
+  max-height: 11.6875rem;
   object-fit: cover;
+  object-position: top;
 }
 .open-grid img:hover {
   transform: scale(1.02, 1.02);
@@ -35,8 +36,8 @@
 
 .open-title {
   display: block;
-  font-size: 3.122rem;
-  width: 90%;
+  font-size: 2.122rem;
+  width: 100%;
   margin: 0 auto;
   background-color: #1d1c1c;
   color: white;
