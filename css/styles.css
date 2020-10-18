@@ -253,7 +253,7 @@ header nav li a:hover {
 
 .out-mains {
   background-color: #1d1c1c;
-  margin: 4rem 0 0;
+  margin: 2.7rem 0 0;
   color: white;
 }
 
@@ -317,6 +317,9 @@ footer {
   }
   .contacts {
     margin: 0 50px 0 auto;
+  }
+  .out-mains {
+    margin: 4rem 0 0;
   }
 }
 /*# sourceMappingURL=styles.css.map */
