@@ -193,10 +193,7 @@ header nav li a:hover {
 }
 
 #modal-box #modal-image-container {
-  background-color: #ddd4d4c7;
   margin: 0 auto;
-  width: 60vw;
-  height: 100%;
   overflow: hidden;
   border-radius: 1%;
 }
@@ -212,8 +209,7 @@ header nav li a:hover {
 #modal-box #modal-image-container #modal-image-wrapper #modal-img {
   border-radius: 1%;
   border: black solid 2px;
-  max-height: 80vh;
-  max-width: 56vw;
+  max-width: 99.99vw;
   min-height: 20vh;
   -o-object-fit: cover;
      object-fit: cover;
@@ -320,6 +316,9 @@ footer {
   }
   .out-mains {
     margin: 4rem 0 0;
+  }
+  #modal-image-container #modal-image-wrapper #modal-img {
+    max-height: 85vh;
   }
 }
 /*# sourceMappingURL=styles.css.map */
