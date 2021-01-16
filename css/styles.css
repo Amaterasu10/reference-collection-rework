@@ -209,7 +209,7 @@ header nav li a:hover {
 #modal-box #modal-image-container #modal-image-wrapper #modal-img {
   border-radius: 1%;
   border: black solid 2px;
-  max-width: 99.99vw;
+  max-width: 95vw;
   min-height: 20vh;
   max-height: 83vh;
   -o-object-fit: cover;
@@ -318,7 +318,7 @@ footer {
   .out-mains {
     margin: 4rem 0 0;
   }
-  #modal-image-container #modal-image-wrapper #modal-img {
+  #modal-img {
     max-height: 85vh;
   }
 }

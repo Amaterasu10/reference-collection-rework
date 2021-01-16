@@ -26,33 +26,33 @@ let modalbox = {
 
   closebtn : document.getElementById("modal-close-btn"),
 
-  animepageA : Array.from( document.querySelectorAll("#anime-page>.image") ),
+  animeList : Array.from( document.querySelectorAll("#anime-page>.image") ),
   
-  modelspageA : Array.from( document.querySelectorAll("#models-page>.image") ),
+  modelsList : Array.from( document.querySelectorAll("#models-page>.image") ),
 
   currentindex : 0, 
 
 
   imageOnClick :
   function() {
-    this.animepageA.forEach(image =>{
+    this.animeList.forEach(image =>{
       image.addEventListener("click", function () {
         if (modalbox.modal.classList == "close") {
           modalbox.modal.classList.replace("close", "open");
           modalbox.body.classList.add("no-scroll");
           modalbox.modalImg.src = this.src;
-          modalbox.currentindex = modalbox.animepageA.indexOf(this);
+          modalbox.currentindex = modalbox.animeList.indexOf(this);
         }
       })
     })
     
-    modalbox.modelspageA.forEach(image =>{
+    modalbox.modelsList.forEach(image =>{
       image.addEventListener("click", function () {
         if (modalbox.modal.classList == "close") {
           modalbox.modal.classList.replace("close", "open");
           modalbox.body.classList.add("no-scroll");
           modalbox.modalImg.src = this.src;
-          modalbox.currentindex = modalbox.modelspageA.indexOf(this);
+          modalbox.currentindex = modalbox.modelsList.indexOf(this);
         }
       })
     })
@@ -63,26 +63,26 @@ let modalbox = {
   function(btn) {
     this.rightbtn.addEventListener("click", function () {
       if (animepage.classList == "open-grid") {
-        if (modalbox.currentindex < modalbox.animepageA.length - 1) {
+        if (modalbox.currentindex < modalbox.animeList.length - 1) {
           modalbox.currentindex = modalbox.currentindex + 1;
-          modalbox.modalImg.src = modalbox.animepageA[modalbox.currentindex].src;
+          modalbox.modalImg.src = modalbox.animeList[modalbox.currentindex].src;
         } 
         
         else {
           modalbox.currentindex = 0;
-          modalbox.modalImg.src = modalbox.animepageA[modalbox.currentindex].src;
+          modalbox.modalImg.src = modalbox.animeList[modalbox.currentindex].src;
         }
       } 
       
       else {
-        if (modalbox.currentindex < modalbox.modelspageA.length - 1) {
+        if (modalbox.currentindex < modalbox.modelsList.length - 1) {
           modalbox.currentindex = modalbox.currentindex + 1;
-          modalbox.modalImg.src = modalbox.modelspageA[modalbox.currentindex].src;
+          modalbox.modalImg.src = modalbox.modelsList[modalbox.currentindex].src;
         } 
         
         else {
           modalbox.currentindex = 0;
-          modalbox.modalImg.src = modalbox.modelspageA[modalbox.currentindex].src;
+          modalbox.modalImg.src = modalbox.modelsList[modalbox.currentindex].src;
         }
       }
 
@@ -92,24 +92,24 @@ let modalbox = {
       if (animepage.classList == "open-grid") {
         if (modalbox.currentindex > 0) {
           modalbox.currentindex = modalbox.currentindex - 1;
-          modalbox.modalImg.src = modalbox.animepageA[modalbox.currentindex].src;
+          modalbox.modalImg.src = modalbox.animeList[modalbox.currentindex].src;
         } 
         
         else {
-          modalbox.currentindex = modalbox.animepageA.length - 1;
-          modalbox.modalImg.src = modalbox.animepageA[modalbox.currentindex].src;
+          modalbox.currentindex = modalbox.animeList.length - 1;
+          modalbox.modalImg.src = modalbox.animeList[modalbox.currentindex].src;
         }
       } 
       
       else {
         if (modalbox.currentindex > 0) {
           modalbox.currentindex = modalbox.currentindex - 1;
-          modalbox.modalImg.src = modalbox.modelspageA[modalbox.currentindex].src;
+          modalbox.modalImg.src = modalbox.modelsList[modalbox.currentindex].src;
         } 
         
         else {
-          modalbox.currentindex = modalbox.modelspageA.length - 1;
-          modalbox.modalImg.src = modalbox.modelspageA[modalbox.currentindex].src;
+          modalbox.currentindex = modalbox.modelsList.length - 1;
+          modalbox.modalImg.src = modalbox.modelsList[modalbox.currentindex].src;
         }
       }
 
