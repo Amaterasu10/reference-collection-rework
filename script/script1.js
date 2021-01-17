@@ -1,17 +1,20 @@
+"use strict";
+
+// global variables
 const animepage = document.getElementById("anime-page");
 const modelspage = document.getElementById("models-page");
 const modelstitle = document.getElementById("models-title");
 const animetitle = document.getElementById("anime-title");
 
-function globalEventListener (type,selector,callback){
-  document.addEventListener(type, e=> {
-    if(e.target.matches(selector)) callback(e)
-  })
-}
+// function globalEventListener (type,selector,callback){
+//   document.addEventListener(type, e=> {
+//     if(e.target.matches(selector)) callback(e)
+//   })
+// }
 
-
+// object
 let modalbox = {
-  
+  //object properties
   body : document.getElementById("body"),
 
   modal : document.getElementById("modal-box"),
@@ -32,7 +35,7 @@ let modalbox = {
 
   currentindex : 0, 
 
-
+  // method 1
   imageOnClick :
   function() {
     this.animeList.forEach(image =>{
@@ -58,7 +61,7 @@ let modalbox = {
     })
   },
 
-
+  // method 2
   modalbtn : 
   function(btn) {
     this.rightbtn.addEventListener("click", function () {
@@ -122,7 +125,7 @@ let modalbox = {
 
   },//modalbtn
 
-
+  // method 3
   changepage : 
   function() {
     animepage.classList = "open-grid";
@@ -130,7 +133,7 @@ let modalbox = {
     modelspage.classList = "close";
     modelstitle.classList = "close";
   
-    const change = () => {
+    function change (){
       if (modelspage.classList == "close") {
         modelspage.classList.replace("close", "open-grid");
         modelstitle.classList.replace("close", "open-title");
@@ -153,12 +156,12 @@ let modalbox = {
     leftbtn.addEventListener("click", change);
     rightbtn.addEventListener("click", change);
 
-    return;
+
   }
   
 }// modalbox class
 
-
+//invocation
 modalbox.changepage();
 modalbox.imageOnClick();
 modalbox.modalbtn();

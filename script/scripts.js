@@ -1,3 +1,5 @@
+"use strict";
+
 const animepage = document.getElementById("anime-page");
 const modelspage = document.getElementById("models-page");
 const modelstitle = document.getElementById("models-title");
