@@ -8,38 +8,67 @@
 // }
 
 // object
-let modalbox = {
-  //object properties
+let modalbox = (function(){
 
-  animePage : document.getElementById("anime-page"),
+  // animePage = document.getElementById("anime-page");
 
-  modelsPage : document.getElementById("models-page"),
+  // modelsPage = document.getElementById("models-page");
 
-  modelsTitle : document.getElementById("models-title"),
+  // modelsTitle = document.getElementById("models-title");
 
-  animeTitle : document.getElementById("anime-title"),
+  // animeTitle = document.getElementById("anime-title");
 
-  body : document.getElementById("body"),
+  // body = document.getElementById("body");
 
-  modal : document.getElementById("modal-box"),
+  // modal = document.getElementById("modal-box");
 
-  ImgCont : document.getElementById("modal-image-container"),
+  // ImgCont = document.getElementById("modal-image-container");
 
-  modalImg : document.getElementById("modal-img"),
+  // modalImg = document.getElementById("modal-img");
 
-  modalLeftBtn : document.getElementById("modal-left-btn"),
+  // modalLeftBtn = document.getElementById("modal-left-btn");
 
-  modalRightBtn : document.getElementById("modal-right-btn"),
+  // modalRightBtn = document.getElementById("modal-right-btn");
 
-  closebtn : document.getElementById("modal-close-btn"),
+  // closebtn = document.getElementById("modal-close-btn");
 
-  animeList : Array.from( document.querySelectorAll("#anime-page>.image") ),
+  // animeList = Array.from( document.querySelectorAll("#anime-page>.image") );
   
-  modelsList : Array.from( document.querySelectorAll("#models-page>.image") ),
+  // modelsList = Array.from( document.querySelectorAll("#models-page>.image") );
 
-  currentindex : 0, 
+  // currentindex = 0; 
 
-  // method 1
+  return{
+
+    animePage : document.getElementById("anime-page"),
+
+    modelsPage : document.getElementById("models-page"),
+
+    modelsTitle : document.getElementById("models-title"),
+
+    animeTitle : document.getElementById("anime-title"),
+
+    body : document.getElementById("body"),
+
+    modal : document.getElementById("modal-box"),
+
+    ImgCont : document.getElementById("modal-image-container"),
+
+    modalImg : document.getElementById("modal-img"),
+
+    modalLeftBtn : document.getElementById("modal-left-btn"),
+
+    modalRightBtn : document.getElementById("modal-right-btn"),
+
+    closebtn : document.getElementById("modal-close-btn"),
+
+    animeList : Array.from( document.querySelectorAll("#anime-page>.image") ),
+    
+    modelsList : Array.from( document.querySelectorAll("#models-page>.image") ),
+
+    currentindex : 0, 
+
+    // method 1
   imageOnClick :
   function() {
     this.animeList.forEach(image =>{
@@ -163,12 +192,8 @@ let modalbox = {
 
   },
 
-  
-  
-}// modalbox class
+  }
 
-//invocation
-modalbox.changepage();
-modalbox.imageOnClick();
-modalbox.modalbtn();
+}())
 
+modalbox
