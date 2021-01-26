@@ -8,150 +8,148 @@
 // }
 
 // object
-let modalbox = {
+let Website = {
   //object properties
 
   animePage : document.getElementById("anime-page"),
 
   modelsPage : document.getElementById("models-page"),
 
-  modelsTitle : document.getElementById("models-title"),
+  modelCategoryTitle : document.getElementById("models-title"),
 
-  animeTitle : document.getElementById("anime-title"),
+  animeCategoryTitle : document.getElementById("anime-title"),
 
   body : document.getElementById("body"),
 
-  modal : document.getElementById("modal-box"),
+  modalBox : document.getElementById("modal-box"),
 
-  ImgCont : document.getElementById("modal-image-container"),
+  ModalImage : document.getElementById("modal-img"),
 
-  modalImg : document.getElementById("modal-img"),
+  modalLeftButton : document.getElementById("modal-left-btn"),
 
-  modalLeftBtn : document.getElementById("modal-left-btn"),
+  modalRightButton : document.getElementById("modal-right-btn"),
 
-  modalRightBtn : document.getElementById("modal-right-btn"),
+  modalCloseButton : document.getElementById("modal-close-btn"),
 
-  closebtn : document.getElementById("modal-close-btn"),
-
-  animeList : Array.from( document.querySelectorAll("#anime-page>.image") ),
+  animeCategory : Array.from( document.querySelectorAll("#anime-page>.image") ),
   
-  modelsList : Array.from( document.querySelectorAll("#models-page>.image") ),
+  modelCategory : Array.from( document.querySelectorAll("#models-page>.image") ),
 
-  currentindex : 0, 
+  modalCurrentIndex : 0, 
 
   // method 1
   imageOnClick :
   function() {
-    this.animeList.forEach(image =>{
+    this.animeCategory.forEach(image =>{
       image.addEventListener("click", function () {
-        if (modalbox.modal.classList == "close") {
-          modalbox.modal.classList.replace("close", "open");
-          modalbox.body.classList.add("no-scroll");
-          modalbox.modalImg.src = this.src;
-          modalbox.currentindex = modalbox.animeList.indexOf(this);
+        if (Website.modalBox.classList == "close") {
+          Website.modalBox.classList.replace("close", "open");
+          Website.body.classList.add("no-scroll");
+          Website.ModalImage.src = this.src;
+          Website.modalCurrentIndex = Website.animeCategory.indexOf(this);
         }
       })
     })
     
-    modalbox.modelsList.forEach(image =>{
+    Website.modelCategory.forEach(image =>{
       image.addEventListener("click", function () {
-        if (modalbox.modal.classList == "close") {
-          modalbox.modal.classList.replace("close", "open");
-          modalbox.body.classList.add("no-scroll");
-          modalbox.modalImg.src = this.src;
-          modalbox.currentindex = modalbox.modelsList.indexOf(this);
+        if (Website.modalBox.classList == "close") {
+          Website.modalBox.classList.replace("close", "open");
+          Website.body.classList.add("no-scroll");
+          Website.ModalImage.src = this.src;
+          Website.modalCurrentIndex = Website.modelCategory.indexOf(this);
         }
       })
     })
   },
 
   // method 2
-  modalbtn : 
+  modalButtons : 
   function(btn) {
-    this.modalRightBtn.addEventListener("click", function () {
-      if (modalbox.animePage.classList == "open-grid") {
-        if (modalbox.currentindex < modalbox.animeList.length - 1) {
-          modalbox.currentindex = modalbox.currentindex + 1;
-          modalbox.modalImg.src = modalbox.animeList[modalbox.currentindex].src;
+    this.modalRightButton.addEventListener("click", function () {
+      if (Website.animePage.classList == "open-grid") {
+        if (Website.modalCurrentIndex < Website.animeCategory.length - 1) {
+          Website.modalCurrentIndex = Website.modalCurrentIndex + 1;
+          Website.ModalImage.src = Website.animeCategory[Website.modalCurrentIndex].src;
         } 
         
         else {
-          modalbox.currentindex = 0;
-          modalbox.modalImg.src = modalbox.animeList[modalbox.currentindex].src;
+          Website.modalCurrentIndex = 0;
+          Website.ModalImage.src = Website.animeCategory[Website.modalCurrentIndex].src;
         }
       } 
       
       else {
-        if (modalbox.currentindex < modalbox.modelsList.length - 1) {
-          modalbox.currentindex = modalbox.currentindex + 1;
-          modalbox.modalImg.src = modalbox.modelsList[modalbox.currentindex].src;
+        if (Website.modalCurrentIndex < Website.modelCategory.length - 1) {
+          Website.modalCurrentIndex = Website.modalCurrentIndex + 1;
+          Website.ModalImage.src = Website.modelCategory[Website.modalCurrentIndex].src;
         } 
         
         else {
-          modalbox.currentindex = 0;
-          modalbox.modalImg.src = modalbox.modelsList[modalbox.currentindex].src;
+          Website.modalCurrentIndex = 0;
+          Website.ModalImage.src = Website.modelCategory[Website.modalCurrentIndex].src;
         }
       }
 
     });
 
-    this.modalLeftBtn.addEventListener("click", function () {
-      if (modalbox.animePage.classList == "open-grid") {
-        if (modalbox.currentindex > 0) {
-          modalbox.currentindex = modalbox.currentindex - 1;
-          modalbox.modalImg.src = modalbox.animeList[modalbox.currentindex].src;
+    this.modalLeftButton.addEventListener("click", function () {
+      if (Website.animePage.classList == "open-grid") {
+        if (Website.modalCurrentIndex > 0) {
+          Website.modalCurrentIndex = Website.modalCurrentIndex - 1;
+          Website.ModalImage.src = Website.animeCategory[Website.modalCurrentIndex].src;
         } 
         
         else {
-          modalbox.currentindex = modalbox.animeList.length - 1;
-          modalbox.modalImg.src = modalbox.animeList[modalbox.currentindex].src;
+          Website.modalCurrentIndex = Website.animeCategory.length - 1;
+          Website.ModalImage.src = Website.animeCategory[Website.modalCurrentIndex].src;
         }
       } 
       
       else {
-        if (modalbox.currentindex > 0) {
-          modalbox.currentindex = modalbox.currentindex - 1;
-          modalbox.modalImg.src = modalbox.modelsList[modalbox.currentindex].src;
+        if (Website.modalCurrentIndex > 0) {
+          Website.modalCurrentIndex = Website.modalCurrentIndex - 1;
+          Website.ModalImage.src = Website.modelCategory[Website.modalCurrentIndex].src;
         } 
         
         else {
-          modalbox.currentindex = modalbox.modelsList.length - 1;
-          modalbox.modalImg.src = modalbox.modelsList[modalbox.currentindex].src;
+          Website.modalCurrentIndex = Website.modelCategory.length - 1;
+          Website.ModalImage.src = Website.modelCategory[Website.modalCurrentIndex].src;
         }
       }
 
     });
 
-    this.closebtn.addEventListener("click", function () {
-      modalbox.modal.classList.replace("open", "close");
-      modalbox.body.classList.remove("no-scroll");
+    this.modalCloseButton.addEventListener("click", function () {
+      Website.modalBox.classList.replace("open", "close");
+      Website.body.classList.remove("no-scroll");
     });
 
-  },//modalbtn
+  },//modalButtons
 
   // method 3
-  changepage : 
+  toggleChangePage : 
   function() {
-    modalbox.animePage.classList = "open-grid";
-    modalbox.animeTitle.classList = "open-title";
-    modalbox.modelsPage.classList = "close";
-    modalbox.modelsTitle.classList = "close";
+    Website.animePage.classList = "open-grid";
+    Website.animeCategoryTitle.classList = "open-title";
+    Website.modelsPage.classList = "close";
+    Website.modelCategoryTitle.classList = "close";
   
     function change (){
-      if (modalbox.modelsPage.classList == "close") {
-        modalbox.modelsPage.classList.replace("close", "open-grid");
-        modalbox.modelsTitle.classList.replace("close", "open-title");
+      if (Website.modelsPage.classList == "close") {
+        Website.modelsPage.classList.replace("close", "open-grid");
+        Website.modelCategoryTitle.classList.replace("close", "open-title");
   
-        modalbox.animePage.classList.replace("open-grid", "close");
-        modalbox.animeTitle.classList.replace("open-title", "close");
+        Website.animePage.classList.replace("open-grid", "close");
+        Website.animeCategoryTitle.classList.replace("open-title", "close");
       }
 
       else {
-        modalbox.modelsPage.classList.replace("open-grid", "close");
-        modalbox.modelsTitle.classList.replace("open-title", "close");
+        Website.modelsPage.classList.replace("open-grid", "close");
+        Website.modelCategoryTitle.classList.replace("open-title", "close");
   
-        modalbox.animePage.classList.replace("close", "open-grid");
-        modalbox.animeTitle.classList.replace("close", "open-title");
+        Website.animePage.classList.replace("close", "open-grid");
+        Website.animeCategoryTitle.classList.replace("close", "open-title");
       }
     };
     const pageLeftBtn = document.getElementsByClassName("left-btn")[0];
@@ -165,10 +163,10 @@ let modalbox = {
 
   
   
-}// modalbox class
+}// Website class
 
 //invocation
-modalbox.changepage();
-modalbox.imageOnClick();
-modalbox.modalbtn();
+Website.toggleChangePage();
+Website.imageOnClick();
+Website.modalButtons();
 
