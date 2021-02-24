@@ -51,7 +51,7 @@ let Website = {
       })
     })
     
-    Website.modelCategory.forEach(image =>{
+    this.modelCategory.forEach(image =>{
       image.addEventListener("click", function () {
         if (Website.modalBox.classList == "close") {
           Website.modalBox.classList.replace("close", "open");
