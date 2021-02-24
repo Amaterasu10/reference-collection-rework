@@ -16,7 +16,10 @@ header {
     text-shadow: 1px 1px 1px black;
 
     a {
+      font-size: 1.5em;
+      display: inline-block;
       text-decoration: none;
+      padding: 5px;
       color: transparent;
 
       &:hover {
@@ -33,6 +36,8 @@ header {
       padding: 0px 0.625rem;
 
       a {
+        font-family: $third-font;
+        font-size: 1.2rem;
         text-decoration: none;
         color: transparent;
         text-shadow: 1px 1px 1px black;
