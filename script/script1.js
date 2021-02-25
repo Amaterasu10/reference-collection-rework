@@ -8,6 +8,51 @@
 // }
 
 // object
+
+// const renderImages = async function (){
+//   let uri = "Images.json";
+//   const res = await fetch(uri);
+
+//   const animePage = Website.animePage;
+//   const modelsPage = Website.modelsPage;
+
+//   if(res.status != 200){
+//     throw new Error("Failed to retrieve the data");
+//   }
+
+//   const images = await  res.json();
+
+//   let animeTemplate = "";
+//   let modelsTemplate = "";
+
+//   images.anime.forEach(image =>{
+//     animeTemplate += 
+//     `
+//       <img class="image" src=${image._src} alt=${image.title} />
+//     `
+//   })
+
+//   animePage.innerHTML = animeTemplate;
+
+//   images.models.forEach(image =>{
+//     modelsTemplate +=
+//     `
+//       <img class="image" src=${image._src} alt=${image.title} />
+//     `
+//   })
+
+//   modelsPage.innerHTML = modelsTemplate;
+
+//   const animeCategory = Array.from( document.querySelectorAll("#anime-page>.image") );
+  
+//   const modelCategory = Array.from( document.querySelectorAll("#models-page>.image") );
+
+  
+// }
+
+//window.addEventListener("DOMContentLoaded", () => renderImages());
+
+
 let Website = {
   //object properties
 
@@ -24,112 +69,16 @@ let Website = {
   modalBox : document.getElementById("modal-box"),
 
   ModalImage : document.getElementById("modal-img"),
-
-  modalLeftButton : document.getElementById("modal-left-btn"),
-
-  modalRightButton : document.getElementById("modal-right-btn"),
-
-  modalCloseButton : document.getElementById("modal-close-btn"),
-
-  animeCategory : Array.from( document.querySelectorAll("#anime-page>.image") ),
-  
-  modelCategory : Array.from( document.querySelectorAll("#models-page>.image") ),
-
-  modalCurrentIndex : 0, 
+ 
 
   // method 1
-  imageOnClick :
-  function() {
-    this.animeCategory.forEach(image =>{
-      image.addEventListener("click", function () {
-        if (Website.modalBox.classList == "close") {
-          Website.modalBox.classList.replace("close", "open");
-          Website.body.classList.add("no-scroll");
-          Website.ModalImage.src = this.src;
-          Website.modalCurrentIndex = Website.animeCategory.indexOf(this);
-        }
-      })
-    })
-    
-    this.modelCategory.forEach(image =>{
-      image.addEventListener("click", function () {
-        if (Website.modalBox.classList == "close") {
-          Website.modalBox.classList.replace("close", "open");
-          Website.body.classList.add("no-scroll");
-          Website.ModalImage.src = this.src;
-          Website.modalCurrentIndex = Website.modelCategory.indexOf(this);
-        }
-      })
-    })
-  },
+  
 
   // method 2
-  modalButtons : 
-  function(btn) {
-    this.modalRightButton.addEventListener("click", function () {
-      if (Website.animePage.classList == "open-grid") {
-        if (Website.modalCurrentIndex < Website.animeCategory.length - 1) {
-          Website.modalCurrentIndex = Website.modalCurrentIndex + 1;
-          Website.ModalImage.src = Website.animeCategory[Website.modalCurrentIndex].src;
-        } 
-        
-        else {
-          Website.modalCurrentIndex = 0;
-          Website.ModalImage.src = Website.animeCategory[Website.modalCurrentIndex].src;
-        }
-      } 
-      
-      else {
-        if (Website.modalCurrentIndex < Website.modelCategory.length - 1) {
-          Website.modalCurrentIndex = Website.modalCurrentIndex + 1;
-          Website.ModalImage.src = Website.modelCategory[Website.modalCurrentIndex].src;
-        } 
-        
-        else {
-          Website.modalCurrentIndex = 0;
-          Website.ModalImage.src = Website.modelCategory[Website.modalCurrentIndex].src;
-        }
-      }
-
-    });
-
-    this.modalLeftButton.addEventListener("click", function () {
-      if (Website.animePage.classList == "open-grid") {
-        if (Website.modalCurrentIndex > 0) {
-          Website.modalCurrentIndex = Website.modalCurrentIndex - 1;
-          Website.ModalImage.src = Website.animeCategory[Website.modalCurrentIndex].src;
-        } 
-        
-        else {
-          Website.modalCurrentIndex = Website.animeCategory.length - 1;
-          Website.ModalImage.src = Website.animeCategory[Website.modalCurrentIndex].src;
-        }
-      } 
-      
-      else {
-        if (Website.modalCurrentIndex > 0) {
-          Website.modalCurrentIndex = Website.modalCurrentIndex - 1;
-          Website.ModalImage.src = Website.modelCategory[Website.modalCurrentIndex].src;
-        } 
-        
-        else {
-          Website.modalCurrentIndex = Website.modelCategory.length - 1;
-          Website.ModalImage.src = Website.modelCategory[Website.modalCurrentIndex].src;
-        }
-      }
-
-    });
-
-    this.modalCloseButton.addEventListener("click", function () {
-      Website.modalBox.classList.replace("open", "close");
-      Website.body.classList.remove("no-scroll");
-    });
-
-  },//modalButtons
+  
 
   // method 3
-  toggleChangePage : 
-  function() {
+  toggleChangePage() {
     Website.animePage.classList = "open-grid";
     Website.animeCategoryTitle.classList = "open-title";
     Website.modelsPage.classList = "close";
@@ -157,9 +106,140 @@ let Website = {
   
     pageLeftBtn.addEventListener("click", change);
     pageRightBtn.addEventListener("click", change);
-
-
   },
+
+  async renderImages(){
+    let uri = "Images.json";
+    const res = await fetch(uri);
+  
+    const animePage = Website.animePage;
+    const modelsPage = Website.modelsPage;
+
+    const modalLeftButton = document.getElementById("modal-left-btn");
+    const modalRightButton = document.getElementById("modal-right-btn");
+    const modalCloseButton = document.getElementById("modal-close-btn");
+  
+    let modalCurrentIndex = 0;
+
+    if(res.status != 200){
+      throw new Error("Failed to retrieve the data");
+    }
+  
+    const images = await  res.json();
+  
+    let animeTemplate = "";
+    let modelsTemplate = "";
+  
+    images.anime.forEach(image =>{
+      animeTemplate += 
+      `
+        <img class="image" src=${image._src} alt=${image.title} />
+      `
+    })
+  
+    animePage.innerHTML = animeTemplate;
+  
+    images.models.forEach(image =>{
+      modelsTemplate +=
+      `
+        <img class="image" src=${image._src} alt=${image.title} />
+      `
+    })
+  
+    modelsPage.innerHTML = modelsTemplate;
+
+    const animeCategory = Array.from( document.querySelectorAll("#anime-page>.image") );
+  
+    const modelCategory = Array.from( document.querySelectorAll("#models-page>.image") );
+
+    const imageOnClick = function() {
+      animeCategory.forEach(image =>{
+        image.addEventListener("click", function () {
+          if (Website.modalBox.classList == "close") {
+            Website.modalBox.classList.replace("close", "open");
+            Website.body.classList.add("no-scroll");
+            Website.ModalImage.src = this.src;
+            modalCurrentIndex = animeCategory.indexOf(this);
+          }
+        })
+      })
+      
+      modelCategory.forEach(image =>{
+        image.addEventListener("click", function () {
+          if (Website.modalBox.classList == "close") {
+            Website.modalBox.classList.replace("close", "open");
+            Website.body.classList.add("no-scroll");
+            Website.ModalImage.src = this.src;
+            modalCurrentIndex = modelCategory.indexOf(this);
+          }
+        })
+      })
+    }
+    imageOnClick();
+    
+    const modalButtons = function(btn) {
+      modalRightButton.addEventListener("click", function () {
+        if (Website.animePage.classList == "open-grid") {
+          if (modalCurrentIndex < animeCategory.length - 1) {
+            modalCurrentIndex = modalCurrentIndex + 1;
+            Website.ModalImage.src = animeCategory[modalCurrentIndex].src;
+          } 
+          
+          else {
+            modalCurrentIndex = 0;
+            Website.ModalImage.src = animeCategory[modalCurrentIndex].src;
+          }
+        } 
+        
+        else {
+          if (modalCurrentIndex < modelCategory.length - 1) {
+            modalCurrentIndex = modalCurrentIndex + 1;
+            Website.ModalImage.src = modelCategory[modalCurrentIndex].src;
+          } 
+          
+          else {
+            modalCurrentIndex = 0;
+            Website.ModalImage.src = modelCategory[modalCurrentIndex].src;
+          }
+        }
+  
+      });
+  
+      modalLeftButton.addEventListener("click", function () {
+        if (Website.animePage.classList == "open-grid") {
+          if (modalCurrentIndex > 0) {
+            modalCurrentIndex = modalCurrentIndex - 1;
+            Website.ModalImage.src = animeCategory[modalCurrentIndex].src;
+          } 
+          
+          else {
+            modalCurrentIndex = animeCategory.length - 1;
+            Website.ModalImage.src = animeCategory[modalCurrentIndex].src;
+          }
+        } 
+        
+        else {
+          if (modalCurrentIndex > 0) {
+            modalCurrentIndex = modalCurrentIndex - 1;
+            Website.ModalImage.src = modelCategory[modalCurrentIndex].src;
+          } 
+          
+          else {
+            modalCurrentIndex = modelCategory.length - 1;
+            Website.ModalImage.src = modelCategory[modalCurrentIndex].src;
+          }
+        }
+  
+      });
+  
+      modalCloseButton.addEventListener("click", function () {
+        Website.modalBox.classList.replace("open", "close");
+        Website.body.classList.remove("no-scroll");
+      });
+  
+    }//modalButtons
+    modalButtons();
+  }
 
   
   
@@ -167,6 +247,21 @@ let Website = {
 
 //invocation
 Website.toggleChangePage();
-Website.imageOnClick();
-Website.modalButtons();
+window.addEventListener("DOMContentLoaded", () => Website.renderImages());
+
+// for(let i = 0; i < 22; i++){
+//   console.log(
+//     `
+//     {
+//       "title" : "image${i < 10 ? "0" + (1+i) : i+1}",
+//       "_src" : "webp/models/pic${i < 10 ? "0" + (1+i) : i+1}.webp",
+//       "id" : ${i}
+//     },
+//     `
+//   );
+
+// }
+
+
+
 
