@@ -1,9 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital@1&family=Cormorant:ital,wght@1,700&family=Sniglet&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital@1&family=Cormorant:ital,wght@1,700&family=Lemonada:wght@600&family=Sniglet&display=swap");
 * {
   padding: 0;
   margin: 0;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 html {
@@ -42,8 +42,8 @@ h2 {
 .open-grid {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(15rem, 1fr)) [auto-fill];
-  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  -ms-grid-columns: (minmax(15rem, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
   grid-gap: 1.625rem;
   padding: 4.6875rem 1.25rem 1.25rem;
   min-height: 100vh;
@@ -54,14 +54,14 @@ h2 {
   min-height: 11.6875rem;
   max-height: 11.6875rem;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
   -o-object-position: top;
-  object-position: top;
+     object-position: top;
 }
 
 .open-grid img:hover {
   -webkit-transform: scale(1.02, 1.02);
-  transform: scale(1.02, 1.02);
+          transform: scale(1.02, 1.02);
   cursor: pointer;
 }
 
@@ -94,14 +94,14 @@ header {
   display: inline-flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -ms-flex-flow: row wrap;
-  flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
   top: 0;
   width: 100%;
   background-color: #003cff;
   z-index: 3;
   -webkit-box-shadow: 1px 1px 5px black;
-  box-shadow: 1px 1px 5px black;
+          box-shadow: 1px 1px 5px black;
 }
 
 header h1 {
@@ -125,8 +125,8 @@ header h1 a:hover {
 
 header nav {
   -ms-flex-item-align: center;
-  -ms-grid-row-align: center;
-  align-self: center;
+      -ms-grid-row-align: center;
+      align-self: center;
   margin: 0 auto;
 }
 
@@ -170,7 +170,7 @@ header nav li a:hover {
 
 #modal-box .modal-btn:hover {
   -webkit-transform: scale(1.02, 1.02);
-  transform: scale(1.02, 1.02);
+          transform: scale(1.02, 1.02);
   cursor: pointer;
 }
 
@@ -194,7 +194,7 @@ header nav li a:hover {
 
 #modal-box #modal-close-btn:hover {
   -webkit-transform: scale(1.02, 1.02);
-  transform: scale(1.02, 1.02);
+          transform: scale(1.02, 1.02);
   cursor: pointer;
 }
 
@@ -219,7 +219,7 @@ header nav li a:hover {
   min-height: 20vh;
   max-height: 83vh;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
 }
 
 .btn {
@@ -235,7 +235,7 @@ header nav li a:hover {
 
 .btn:hover {
   -webkit-transform: scale(1.02, 1.02);
-  transform: scale(1.02, 1.02);
+          transform: scale(1.02, 1.02);
   border: black 1px solid;
   cursor: pointer;
 }
@@ -304,7 +304,7 @@ footer {
     margin: 0px 62px 0px auto;
   }
   .open-title {
-    font-size: 3.122rem;
+    font-size: 2.68rem;
     width: 90%;
   }
   .open-grid img {
