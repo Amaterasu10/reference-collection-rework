@@ -1,0 +1,218 @@
+{
+    "anime": 
+    [
+        {
+            "title" : "image01",
+            "_src" : "webp/anime/pic01.webp",
+            "id" : 0
+        }, 
+        {
+            "title" : "image02",
+            "_src" : "webp/anime/pic02.webp",
+            "id" : 1
+        }, 
+        {
+            "title" : "image03",
+            "_src" : "webp/anime/pic03.webp",
+            "id" : 2
+        }, 
+        {
+            "title" : "image04",
+            "_src" : "webp/anime/pic04.webp",
+            "id" : 3
+        }, 
+        {
+            "title" : "image05",
+            "_src" : "webp/anime/pic05.webp",
+            "id" : 4
+        }, 
+        {
+            "title" : "image06",
+            "_src" : "webp/anime/pic06.webp",
+            "id" : 5
+        }, 
+        {
+            "title" : "image07",
+            "_src" : "webp/anime/pic07.webp",
+            "id" : 6
+        }, 
+        {
+            "title" : "image08",
+            "_src" : "webp/anime/pic08.webp",
+            "id" : 7
+        }, 
+        {
+            "title" : "image09",
+            "_src" : "webp/anime/pic09.webp",
+            "id" : 8
+        }, 
+        {
+            "title" : "image010",
+            "_src" : "webp/anime/pic10.webp",
+            "id" : 9
+        }, 
+        {
+            "title" : "image11",
+            "_src" : "webp/anime/pic11.webp",
+            "id" : 10
+        }, 
+        {
+            "title" : "image12",
+            "_src" : "webp/anime/pic12.webp",
+            "id" : 11
+        }, 
+        {
+            "title" : "image13",
+            "_src" : "webp/anime/pic13.webp",
+            "id" : 12
+        }, 
+        {
+            "title" : "image14",
+            "_src" : "webp/anime/pic14.webp",
+            "id" : 13
+        }, 
+        {
+            "title" : "image15",
+            "_src" : "webp/anime/pic15.webp",
+            "id" : 14
+        }, 
+        {
+            "title" : "image16",
+            "_src" : "webp/anime/pic16.webp",
+            "id" : 15
+        }, 
+        {
+            "title" : "image17",
+            "_src" : "webp/anime/pic17.webp",
+            "id" : 16
+        }, 
+        {
+            "title" : "image18",
+            "_src" : "webp/anime/pic18.webp",
+            "id" : 17
+        }, 
+        {
+            "title" : "image19",
+            "_src" : "webp/anime/pic19.webp",
+            "id" : 18
+        }, 
+        {
+            "title" : "image20",
+            "_src" : "webp/anime/pic20.webp",
+            "id" : 19
+        }, 
+        {
+            "title" : "image21",
+            "_src" : "webp/anime/pic21.webp",
+            "id" : 20
+        }
+    ],
+    "models": 
+    [
+        {
+            "title" : "image01",
+            "_src" : "webp/models/pic01.webp",
+            "id" : 0
+          },
+          {
+            "title" : "image02",
+            "_src" : "webp/models/pic02.webp",
+            "id" : 1
+          },
+          {
+            "title" : "image03",
+            "_src" : "webp/models/pic03.webp",
+            "id" : 2
+          },
+          {
+            "title" : "image04",
+            "_src" : "webp/models/pic04.webp",
+            "id" : 3
+          },
+          {
+            "title" : "image05",
+            "_src" : "webp/models/pic05.webp",
+            "id" : 4
+          },
+          {
+            "title" : "image06",
+            "_src" : "webp/models/pic06.webp",
+            "id" : 5
+          },
+          {
+            "title" : "image07",
+            "_src" : "webp/models/pic07.webp",
+            "id" : 6
+          },
+          {
+            "title" : "image08",
+            "_src" : "webp/models/pic08.webp",
+            "id" : 7
+          },
+          {
+            "title" : "image09",
+            "_src" : "webp/models/pic09.webp",
+            "id" : 8
+          },
+          {
+            "title" : "image010",
+            "_src" : "webp/models/pic10.webp",
+            "id" : 9
+          },
+          {
+            "title" : "image11",
+            "_src" : "webp/models/pic11.webp",
+            "id" : 10
+          },
+          {
+            "title" : "image12",
+            "_src" : "webp/models/pic12.webp",
+            "id" : 11
+          },
+          {
+            "title" : "image13",
+            "_src" : "webp/models/pic13.webp",
+            "id" : 12
+          },
+          {
+            "title" : "image14",
+            "_src" : "webp/models/pic14.webp",
+            "id" : 13
+          },
+          {
+            "title" : "image15",
+            "_src" : "webp/models/pic15.webp",
+            "id" : 14
+          },
+          {
+            "title" : "image16",
+            "_src" : "webp/models/pic16.webp",
+            "id" : 15
+          },
+          {
+            "title" : "image17",
+            "_src" : "webp/models/pic17.webp",
+            "id" : 16
+          },
+          {
+            "title" : "image18",
+            "_src" : "webp/models/pic18.webp",
+            "id" : 17
+          },
+          {
+            "title" : "image19",
+            "_src" : "webp/models/pic19.webp",
+            "id" : 18
+          },
+          {
+            "title" : "image20",
+            "_src" : "webp/models/pic20.webp",
+            "id" : 19
+          },
+          {
+            "title" : "image21",
+            "_src" : "webp/models/pic21.webp",
+            "id" : 20
+          }
+    ]
+}
