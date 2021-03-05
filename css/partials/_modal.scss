@@ -20,12 +20,14 @@
 
     &:hover {
       transform: scale(1.02, 1.02);
+      background-color: #727171;
       cursor: pointer;
     }
   }
 
   #modal-left-btn {
     left: 0;
+    border: 0;
   }
 
   #modal-right-btn {
@@ -59,7 +61,6 @@
 
       #modal-img {
         border-radius: 1%;
-        border: black solid 2px;
         max-width: 95vw;
         min-height: 20vh;
         max-height: 83vh;
