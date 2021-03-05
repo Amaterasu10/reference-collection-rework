@@ -5,7 +5,7 @@
             "title": "Sakura Tree",
             "name" : "image-01",
             "photographer": "Photo by Oleg Magni from Pexels",
-            "_src" : "photos/list1/image-01.jpg",
+            "_src" : "photos/list1/image-01.webp",
             "lowRezSrc" : "photos/list1/compressed/thumbnail/image-01.webp",
             "id" : 0
         },
@@ -13,7 +13,7 @@
             "title": "Skyline Photography of Buildings",
             "name" : "image-02",
             "photographer": "Photo by Sanaan Mazhar from Pexels",
-            "_src" : "photos/list1/image-02.jpg",
+            "_src" : "photos/list1/image-02.webp",
             "lowRezSrc" : "photos/list1/compressed/thumbnail/image-02.webp",
             "id" : 1
         },
@@ -21,7 +21,7 @@
             "title": "Photography of Fall Trees",
             "name" : "image-03",
             "photographer": "Photo by Guillaume Meurice from Pexels",
-            "_src" : "photos/list1/image-03.jpg",
+            "_src" : "photos/list1/image-03.webp",
             "lowRezSrc" : "photos/list1/compressed/thumbnail/image-03.webp",
             "id" : 2
         },
@@ -29,7 +29,7 @@
             "title": "Close-up Photography of Brown Lion",
             "name" : "image-04",
             "photographer": "Photo by Pixabay from Pexels",
-            "_src" : "photos/list1/image-04.jpg",
+            "_src" : "photos/list1/image-04.webp",
             "lowRezSrc" : "photos/list1/compressed/thumbnail/image-04.webp",
             "id" : 3
         },
@@ -37,7 +37,7 @@
             "title": "Starry Sky Over Mountains",
             "name" : "image-05",
             "photographer": "Photo by Cliford Mervil from Pexels",
-            "_src" : "photos/list1/image-05.jpg",
+            "_src" : "photos/list1/image-05.webp",
             "lowRezSrc" : "photos/list1/compressed/thumbnail/image-05.webp",
             "id" : 4
         },
@@ -45,7 +45,7 @@
             "title": "Reflection of Trees",
             "name" : "image-06",
             "photographer": "Photo by Stijn Dijkstra from Pexels",
-            "_src" : "photos/list1/image-06.jpg",
+            "_src" : "photos/list1/image-06.webp",
             "lowRezSrc" : "photos/list1/compressed/thumbnail/image-06.webp",
             "id" : 5
         },
@@ -53,7 +53,7 @@
             "title": "Scenic View of Sea Against Sky at Sunset",
             "name" : "image-07",
             "photographer": "Photo by Pixabay from Pexels",
-            "_src" : "photos/list1/image-07.jpg",
+            "_src" : "photos/list1/image-07.webp",
             "lowRezSrc" : "photos/list1/compressed/thumbnail/image-07.webp",
             "id" : 6
         },
@@ -61,7 +61,7 @@
             "title": "Sunray Through Trees",
             "name" : "image-08",
             "photographer": "Photo by Todd Trapani from Pexels",
-            "_src" : "photos/list1/image-08.jpg",
+            "_src" : "photos/list1/image-08.webp",
             "lowRezSrc" : "photos/list1/compressed/thumbnail/image-08.webp",
             "id" : 7
         },
@@ -69,7 +69,7 @@
             "title": "Photo of a Pathway in a Forest",
             "name" : "image-09",
             "photographer": "Photo by Artem Saranin from Pexels",
-            "_src" : "photos/list1/image-09.jpg",
+            "_src" : "photos/list1/image-09.webp",
             "lowRezSrc" : "photos/list1/compressed/thumbnail/image-09.webp",
             "id" : 8
         },
@@ -77,7 +77,7 @@
             "title": "Timelapse Photography Off Water Fountain",
             "name" : "image-10",
             "photographer": "Photo by Gabriel Peter from Pexels",
-            "_src" : "photos/list1/image-10.jpg",
+            "_src" : "photos/list1/image-10.webp",
             "lowRezSrc" : "photos/list1/compressed/thumbnail/image-10.webp",
             "id" : 9
         },
@@ -85,7 +85,7 @@
             "title": "Antelope Canyon",
             "name" : "image-11",
             "photographer": "Photo by Paul IJsendoorn from Pexels",
-            "_src" : "photos/list1/image-11.jpg",
+            "_src" : "photos/list1/image-11.webp",
             "lowRezSrc" : "photos/list1/compressed/thumbnail/image-11.webp",
             "id" : 10
         },
@@ -93,7 +93,7 @@
             "title": "Green Wheat Field",
             "name" : "image-12",
             "photographer": "Photo by Kei Scampa from Pexels",
-            "_src" : "photos/list1/image-12.jpg",
+            "_src" : "photos/list1/image-12.webp",
             "lowRezSrc" : "photos/list1/compressed/thumbnail/image-12.webp",
             "id" : 11
         },
@@ -101,7 +101,7 @@
             "title": "Brown Rock Formation during Night Time",
             "name" : "image-13",
             "photographer": "Photo by Alex Azabache from Pexels",
-            "_src" : "photos/list1/image-13.jpg",
+            "_src" : "photos/list1/image-13.webp",
             "lowRezSrc" : "photos/list1/compressed/thumbnail/image-13.webp",
             "id" : 12
         },
@@ -109,7 +109,7 @@
             "title": "Brown Rocky Mountain Under Starry Night",
             "name" : "image-14",
             "photographer": "Photo by Adi Perets from Pexels",
-            "_src" : "photos/list1/image-14.jpg",
+            "_src" : "photos/list1/image-14.webp",
             "lowRezSrc" : "photos/list1/compressed/thumbnail/image-14.webp",
             "id" : 13
         },
@@ -117,7 +117,7 @@
             "title": "Person In The Middle Of A Forest",
             "name" : "image-15",
             "photographer": "Photo by Sem Steenbergen from Pexels",
-            "_src" : "photos/list1/image-15.jpg",
+            "_src" : "photos/list1/image-15.webp",
             "lowRezSrc" : "photos/list1/compressed/thumbnail/image-15.webp",
             "id" : 14
         }
@@ -129,7 +129,7 @@
             "title": "Sakura Tree",
             "name" : "image-01",
             "photographer": "Photo by Oleg Magni from Pexels",
-            "_src" : "photos/list2/image-01.jpg",
+            "_src" : "photos/list2/image-01.webp",
             "lowRezSrc" : "photos/list2/compressed/thumbnail/image-01.webp",
             "id" : 0
         },
@@ -137,7 +137,7 @@
             "title": "Skyline Photography of Buildings",
             "name" : "image-02",
             "photographer": "Photo by Sanaan Mazhar from Pexels",
-            "_src" : "photos/list2/image-02.jpg",
+            "_src" : "photos/list2/image-02.webp",
             "lowRezSrc" : "photos/list2/compressed/thumbnail/image-02.webp",
             "id" : 1
         },
@@ -145,7 +145,7 @@
             "title": "Photography of Fall Trees",
             "name" : "image-03",
             "photographer": "Photo by Guillaume Meurice from Pexels",
-            "_src" : "photos/list2/image-03.jpg",
+            "_src" : "photos/list2/image-03.webp",
             "lowRezSrc" : "photos/list2/compressed/thumbnail/image-03.webp",
             "id" : 2
         },
@@ -153,7 +153,7 @@
             "title": "Close-up Photography of Brown Lion",
             "name" : "image-04",
             "photographer": "Photo by Pixabay from Pexels",
-            "_src" : "photos/list2/image-04.jpg",
+            "_src" : "photos/list2/image-04.webp",
             "lowRezSrc" : "photos/list2/compressed/thumbnail/image-04.webp",
             "id" : 3
         },
@@ -161,7 +161,7 @@
             "title": "Starry Sky Over Mountains",
             "name" : "image-05",
             "photographer": "Photo by Cliford Mervil from Pexels",
-            "_src" : "photos/list2/image-05.jpg",
+            "_src" : "photos/list2/image-05.webp",
             "lowRezSrc" : "photos/list2/compressed/thumbnail/image-05.webp",
             "id" : 4
         },
@@ -169,7 +169,7 @@
             "title": "Reflection of Trees",
             "name" : "image-06",
             "photographer": "Photo by Stijn Dijkstra from Pexels",
-            "_src" : "photos/list2/image-06.jpg",
+            "_src" : "photos/list2/image-06.webp",
             "lowRezSrc" : "photos/list2/compressed/thumbnail/image-06.webp",
             "id" : 5
         },
@@ -177,7 +177,7 @@
             "title": "Scenic View of Sea Against Sky at Sunset",
             "name" : "image-07",
             "photographer": "Photo by Pixabay from Pexels",
-            "_src" : "photos/list2/image-07.jpg",
+            "_src" : "photos/list2/image-07.webp",
             "lowRezSrc" : "photos/list2/compressed/thumbnail/image-07.webp",
             "id" : 6
         },
@@ -185,7 +185,7 @@
             "title": "Sunray Through Trees",
             "name" : "image-08",
             "photographer": "Photo by Todd Trapani from Pexels",
-            "_src" : "photos/list2/image-08.jpg",
+            "_src" : "photos/list2/image-08.webp",
             "lowRezSrc" : "photos/list2/compressed/thumbnail/image-08.webp",
             "id" : 7
         },
@@ -193,7 +193,7 @@
             "title": "Photo of a Pathway in a Forest",
             "name" : "image-09",
             "photographer": "Photo by Artem Saranin from Pexels",
-            "_src" : "photos/list2/image-09.jpg",
+            "_src" : "photos/list2/image-09.webp",
             "lowRezSrc" : "photos/list2/compressed/thumbnail/image-09.webp",
             "id" : 8
         },
@@ -201,7 +201,7 @@
             "title": "Timelapse Photography Off Water Fountain",
             "name" : "image-10",
             "photographer": "Photo by Gabriel Peter from Pexels",
-            "_src" : "photos/list2/image-10.jpg",
+            "_src" : "photos/list2/image-10.webp",
             "lowRezSrc" : "photos/list2/compressed/thumbnail/image-10.webp",
             "id" : 9
         },
@@ -209,7 +209,7 @@
             "title": "Antelope Canyon",
             "name" : "image-11",
             "photographer": "Photo by Paul IJsendoorn from Pexels",
-            "_src" : "photos/list2/image-11.jpg",
+            "_src" : "photos/list2/image-11.webp",
             "lowRezSrc" : "photos/list2/compressed/thumbnail/image-11.webp",
             "id" : 10
         },
@@ -217,7 +217,7 @@
             "title": "Green Wheat Field",
             "name" : "image-12",
             "photographer": "Photo by Kei Scampa from Pexels",
-            "_src" : "photos/list2/image-12.jpg",
+            "_src" : "photos/list2/image-12.webp",
             "lowRezSrc" : "photos/list2/compressed/thumbnail/image-12.webp",
             "id" : 11
         },
@@ -225,7 +225,7 @@
             "title": "Brown Rock Formation during Night Time",
             "name" : "image-13",
             "photographer": "Photo by Alex Azabache from Pexels",
-            "_src" : "photos/list2/image-13.jpg",
+            "_src" : "photos/list2/image-13.webp",
             "lowRezSrc" : "photos/list2/compressed/thumbnail/image-13.webp",
             "id" : 12
         },
@@ -233,7 +233,7 @@
             "title": "Brown Rocky Mountain Under Starry Night",
             "name" : "image-14",
             "photographer": "Photo by Adi Perets from Pexels",
-            "_src" : "photos/list2/image-14.jpg",
+            "_src" : "photos/list2/image-14.webp",
             "lowRezSrc" : "photos/list2/compressed/thumbnail/image-14.webp",
             "id" : 13
         },
@@ -241,7 +241,7 @@
             "title": "Person In The Middle Of A Forest",
             "name" : "image-15",
             "photographer": "Photo by Sem Steenbergen from Pexels",
-            "_src" : "photos/list2/image-15.jpg",
+            "_src" : "photos/list2/image-15.webp",
             "lowRezSrc" : "photos/list2/compressed/thumbnail/image-15.webp",
             "id" : 14
         }
