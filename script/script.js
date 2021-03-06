@@ -145,13 +145,13 @@ let Website = {
           if (modalCurrentIndex < animeCategory.length - 1) {
             modalCurrentIndex = modalCurrentIndex + 1;
             //Website.ModalImage.src = animeCategory[modalCurrentIndex].src;
-            Website.ModalImage.src = images.images1[modalCurrentIndex]._src;
+            Website.ModalImage.src = images.images1[modalCurrentIndex].lowRezSrc;
           } 
           
           else {
             modalCurrentIndex = 0;
             //Website.ModalImage.src = animeCategory[modalCurrentIndex].src;
-            Website.ModalImage.src = images.images1[modalCurrentIndex]._src;
+            Website.ModalImage.src = images.images1[modalCurrentIndex].lowRezSrc;
           }
         } 
         
@@ -159,13 +159,13 @@ let Website = {
           if (modalCurrentIndex < modelCategory.length - 1) {
             modalCurrentIndex = modalCurrentIndex + 1;
             //Website.ModalImage.src = modelCategory[modalCurrentIndex].src;
-            Website.ModalImage.src = images.images2[modalCurrentIndex]._src;
+            Website.ModalImage.src = images.images2[modalCurrentIndex].lowRezSrc;
           } 
           
           else {
             modalCurrentIndex = 0;
             //Website.ModalImage.src = modelCategory[modalCurrentIndex].src;
-            Website.ModalImage.src = images.images2[modalCurrentIndex]._src;
+            Website.ModalImage.src = images.images2[modalCurrentIndex].lowRezSrc;
           }
         }
   
@@ -176,13 +176,13 @@ let Website = {
           if (modalCurrentIndex > 0) {
             modalCurrentIndex = modalCurrentIndex - 1;
             //Website.ModalImage.src = animeCategory[modalCurrentIndex].src;
-            Website.ModalImage.src = images.images1[modalCurrentIndex]._src;
+            Website.ModalImage.src = images.images1[modalCurrentIndex].lowRezSrc;
           } 
           
           else {
             modalCurrentIndex = animeCategory.length - 1;
             //Website.ModalImage.src = animeCategory[modalCurrentIndex].src;
-            Website.ModalImage.src = images.images1[modalCurrentIndex]._src;
+            Website.ModalImage.src = images.images1[modalCurrentIndex].lowRezSrc;
           }
         } 
         
@@ -190,13 +190,13 @@ let Website = {
           if (modalCurrentIndex > 0) {
             modalCurrentIndex = modalCurrentIndex - 1;
             //Website.ModalImage.src = modelCategory[modalCurrentIndex].src;
-            Website.ModalImage.src = images.images2[modalCurrentIndex]._src;
+            Website.ModalImage.src = images.images2[modalCurrentIndex].lowRezSrc;
           } 
           
           else {
             modalCurrentIndex = modelCategory.length - 1;
             //Website.ModalImage.src = modelCategory[modalCurrentIndex].src;
-            Website.ModalImage.src = images.images2[modalCurrentIndex]._src;
+            Website.ModalImage.src = images.images2[modalCurrentIndex].lowRezSrc;
           }
         }
   
