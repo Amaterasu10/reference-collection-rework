@@ -118,7 +118,7 @@ let Website = {
             Website.modalBox.classList.replace("close", "open");
             Website.body.classList.add("no-scroll");
             //Website.ModalImage.src = this.src;
-            Website.ModalImage.src = images.images1[animeCategory.indexOf(this)].lowRezSrc;
+            Website.ModalImage.src = images.images1[animeCategory.indexOf(this)]._src;
             modalCurrentIndex = animeCategory.indexOf(this);
             
           }
@@ -131,7 +131,7 @@ let Website = {
             Website.modalBox.classList.replace("close", "open");
             Website.body.classList.add("no-scroll");
             //Website.ModalImage.src = this.src;
-            Website.ModalImage.src = images.images2[modelCategory.indexOf(this)].lowRezSrc;
+            Website.ModalImage.src = images.images2[modelCategory.indexOf(this)]._src;
             modalCurrentIndex = modelCategory.indexOf(this);
           }
         })
@@ -145,13 +145,13 @@ let Website = {
           if (modalCurrentIndex < animeCategory.length - 1) {
             modalCurrentIndex = modalCurrentIndex + 1;
             //Website.ModalImage.src = animeCategory[modalCurrentIndex].src;
-            Website.ModalImage.src = images.images1[modalCurrentIndex].lowRezSrc;
+            Website.ModalImage.src = images.images1[modalCurrentIndex]._src;
           } 
           
           else {
             modalCurrentIndex = 0;
             //Website.ModalImage.src = animeCategory[modalCurrentIndex].src;
-            Website.ModalImage.src = images.images1[modalCurrentIndex].lowRezSrc;
+            Website.ModalImage.src = images.images1[modalCurrentIndex]._src;
           }
         } 
         
@@ -159,13 +159,13 @@ let Website = {
           if (modalCurrentIndex < modelCategory.length - 1) {
             modalCurrentIndex = modalCurrentIndex + 1;
             //Website.ModalImage.src = modelCategory[modalCurrentIndex].src;
-            Website.ModalImage.src = images.images2[modalCurrentIndex].lowRezSrc;
+            Website.ModalImage.src = images.images2[modalCurrentIndex]._src;
           } 
           
           else {
             modalCurrentIndex = 0;
             //Website.ModalImage.src = modelCategory[modalCurrentIndex].src;
-            Website.ModalImage.src = images.images2[modalCurrentIndex].lowRezSrc;
+            Website.ModalImage.src = images.images2[modalCurrentIndex]._src;
           }
         }
   
@@ -176,13 +176,13 @@ let Website = {
           if (modalCurrentIndex > 0) {
             modalCurrentIndex = modalCurrentIndex - 1;
             //Website.ModalImage.src = animeCategory[modalCurrentIndex].src;
-            Website.ModalImage.src = images.images1[modalCurrentIndex].lowRezSrc;
+            Website.ModalImage.src = images.images1[modalCurrentIndex]._src;
           } 
           
           else {
             modalCurrentIndex = animeCategory.length - 1;
             //Website.ModalImage.src = animeCategory[modalCurrentIndex].src;
-            Website.ModalImage.src = images.images1[modalCurrentIndex].lowRezSrc;
+            Website.ModalImage.src = images.images1[modalCurrentIndex]._src;
           }
         } 
         
@@ -190,13 +190,13 @@ let Website = {
           if (modalCurrentIndex > 0) {
             modalCurrentIndex = modalCurrentIndex - 1;
             //Website.ModalImage.src = modelCategory[modalCurrentIndex].src;
-            Website.ModalImage.src = images.images2[modalCurrentIndex].lowRezSrc;
+            Website.ModalImage.src = images.images2[modalCurrentIndex]._src;
           } 
           
           else {
             modalCurrentIndex = modelCategory.length - 1;
             //Website.ModalImage.src = modelCategory[modalCurrentIndex].src;
-            Website.ModalImage.src = images.images2[modalCurrentIndex].lowRezSrc;
+            Website.ModalImage.src = images.images2[modalCurrentIndex]._src;
           }
         }
   
@@ -205,6 +205,7 @@ let Website = {
       modalCloseButton.addEventListener("click", function () {
         Website.modalBox.classList.replace("open", "close");
         Website.body.classList.remove("no-scroll");
+        Website.ModalImage.src = "";
       });
   
     }//modalButtons
