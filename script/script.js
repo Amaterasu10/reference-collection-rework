@@ -76,7 +76,7 @@ let Website = {
     images.images1.forEach(image =>{
       template_01 += 
       `
-        <img class="image" src=${image.lowRezSrc} alt=${image.title} />
+        <img class="image" src=${image.lowRezSrc} loading = "lazy" alt=${image.name} title=${image.title}/>
       `
     })
     category_01.innerHTML = template_01;
@@ -84,10 +84,12 @@ let Website = {
     images.images2.forEach(image =>{
       template_02 += 
       `
-        <img class="image" src=${image.lowRezSrc} alt=${image.title} />
+        <img class="image" src=${image.lowRezSrc} loading = "lazy" alt=${image.name} title=${image.title} />
       `
     })
     category_01.innerHTML = template_01;
+
+    
 
     // images.anime.forEach(image =>{
     //   template_01 += 
