@@ -118,7 +118,7 @@ let Website = {
             Website.modalBox.classList.replace("close", "open");
             Website.body.classList.add("no-scroll");
             //Website.ModalImage.src = this.src;
-            Website.ModalImage.src = images.images1[animeCategory.indexOf(this)]._src;
+            Website.ModalImage.src = images.images1[animeCategory.indexOf(this)].lowRezSrc;
             modalCurrentIndex = animeCategory.indexOf(this);
             
           }
@@ -131,7 +131,7 @@ let Website = {
             Website.modalBox.classList.replace("close", "open");
             Website.body.classList.add("no-scroll");
             //Website.ModalImage.src = this.src;
-            Website.ModalImage.src = images.images2[modelCategory.indexOf(this)]._src;
+            Website.ModalImage.src = images.images2[modelCategory.indexOf(this)].lowRezSrc;
             modalCurrentIndex = modelCategory.indexOf(this);
           }
         })
