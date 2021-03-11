@@ -152,7 +152,7 @@ header nav li a:hover {
 
 #modal-box {
   position: fixed;
-  background-color: #080808da;
+  background-color: #080808f0;
   height: 100vh;
   z-index: 4;
   top: 0;
@@ -160,6 +160,12 @@ header nav li a:hover {
   right: 0;
   left: 0;
   overflow: hidden;
+}
+
+#modal-box .image-details {
+  color: white;
+  letter-spacing: 0.1em;
+  font-size: 0.9rem;
 }
 
 #modal-box .modal-btn {
@@ -225,6 +231,8 @@ header nav li a:hover {
   max-height: 83vh;
   -o-object-fit: cover;
      object-fit: cover;
+  display: block;
+  margin: 0 auto;
 }
 
 /*!
@@ -6459,6 +6467,9 @@ footer {
   }
   #modal-img {
     max-height: 85vh;
+  }
+  #modal-box .image-details {
+    font-size: 1rem;
   }
 }
 /*# sourceMappingURL=styles.css.map */

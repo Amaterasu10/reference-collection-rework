@@ -1,6 +1,6 @@
 #modal-box {
   position: fixed;
-  background-color: #080808da;
+  background-color: #080808f0;
   height: 100vh;
   z-index: 4;
   top: 0;
@@ -8,6 +8,12 @@
   right: 0;
   left: 0;
   overflow: hidden;
+
+  .image-details {
+    color: white;
+    letter-spacing: 0.1em;
+    font-size: 0.9rem;
+  }
 
   .modal-btn {
     border: 0;
@@ -65,6 +71,8 @@
         min-height: 20vh;
         max-height: 83vh;
         object-fit: cover;
+        display: block;
+        margin: 0 auto;
       }
     }
   }
