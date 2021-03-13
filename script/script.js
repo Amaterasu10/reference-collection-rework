@@ -18,6 +18,7 @@ let Website = {
   ModalImage : document.getElementById("modal-img"),
 
   photographer : document.getElementById("photographer"),
+
   alt : document.getElementById("alt"),
 
   // method 1
@@ -56,8 +57,7 @@ let Website = {
   // method 2
   async renderImages(){
     const {category_01, category_02, modalBox, body, ModalImage, photographer, alt} = this;
-    let uri = "photos/photo details.json";
-    const res = await fetch(uri);
+    const res = await fetch("photos/photo details.json");
   
     const modalLeftButton = document.getElementById("modal-left-btn");
     const modalRightButton = document.getElementById("modal-right-btn");
