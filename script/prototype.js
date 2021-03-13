@@ -1,64 +1,11 @@
 "use strict";
 
-
-// function globalEventListener (type,selector,callback){
-//   document.addEventListener(type, e=> {
-//     if(e.target.matches(selector)) callback(e)
-//   })
-// }
-
-// object
-
-// const renderImages = async function (){
-//   let uri = "Images.json";
-//   const res = await fetch(uri);
-
-//   const animePage = Website.animePage;
-//   const modelsPage = Website.modelsPage;
-
-//   if(res.status != 200){
-//     throw new Error("Failed to retrieve the data");
-//   }
-
-//   const images = await  res.json();
-
-//   let animeTemplate = "";
-//   let modelsTemplate = "";
-
-//   images.anime.forEach(image =>{
-//     animeTemplate += 
-//     `
-//       <img class="image" src=${image._src} alt=${image.title} />
-//     `
-//   })
-
-//   animePage.innerHTML = animeTemplate;
-
-//   images.models.forEach(image =>{
-//     modelsTemplate +=
-//     `
-//       <img class="image" src=${image._src} alt=${image.title} />
-//     `
-//   })
-
-//   modelsPage.innerHTML = modelsTemplate;
-
-//   const animeCategory = Array.from( document.querySelectorAll("#anime-page>.image") );
-  
-//   const modelCategory = Array.from( document.querySelectorAll("#models-page>.image") );
-
-  
-// }
-
-//window.addEventListener("DOMContentLoaded", () => renderImages());
-
-
 let Website = {
   //object properties
 
-  animePage : document.getElementById("anime-page"),
+  category_01 : document.getElementById("anime-page"),
 
-  modelsPage : document.getElementById("models-page"),
+  category_02 : document.getElementById("models-page"),
 
   modelCategoryTitle : document.getElementById("models-title"),
 
@@ -69,47 +16,50 @@ let Website = {
   modalBox : document.getElementById("modal-box"),
 
   ModalImage : document.getElementById("modal-img"),
- 
+
+  photographer : document.getElementById("photographer"),
+
+  alt : document.getElementById("alt"),
 
   // method 1
   
   toggleChangePage() {
-    Website.animePage.classList = "open-grid";
-    Website.animeCategoryTitle.classList = "open-title";
-    Website.modelsPage.classList = "close";
-    Website.modelCategoryTitle.classList = "close";
+    const {category_01, category_02, animeCategoryTitle, modelCategoryTitle} = this;
+    category_01.classList = "open-grid";
+    animeCategoryTitle.classList = "open-title";
+    category_02.classList = "close";
+    modelCategoryTitle.classList = "close";
+    
+    function changePage (){
+      
+      if (category_02.classList == "close") {
+        category_02.classList.replace("close", "open-grid");
+        modelCategoryTitle.classList.replace("close", "open-title");
   
-    function change (){
-      if (Website.modelsPage.classList == "close") {
-        Website.modelsPage.classList.replace("close", "open-grid");
-        Website.modelCategoryTitle.classList.replace("close", "open-title");
-  
-        Website.animePage.classList.replace("open-grid", "close");
-        Website.animeCategoryTitle.classList.replace("open-title", "close");
+        category_01.classList.replace("open-grid", "close");
+        animeCategoryTitle.classList.replace("open-title", "close");
       }
 
       else {
-        Website.modelsPage.classList.replace("open-grid", "close");
-        Website.modelCategoryTitle.classList.replace("open-title", "close");
+        category_02.classList.replace("open-grid", "close");
+        modelCategoryTitle.classList.replace("open-title", "close");
   
-        Website.animePage.classList.replace("close", "open-grid");
-        Website.animeCategoryTitle.classList.replace("close", "open-title");
+        category_01.classList.replace("close", "open-grid");
+        animeCategoryTitle.classList.replace("close", "open-title");
       }
     };
     const pageLeftBtn = document.getElementsByClassName("left-btn")[0];
     const pageRightBtn = document.getElementsByClassName("right-btn")[0];
   
-    pageLeftBtn.addEventListener("click", change);
-    pageRightBtn.addEventListener("click", change);
+    pageLeftBtn.addEventListener("click", changePage);
+    pageRightBtn.addEventListener("click", changePage);
   },
 
+  // method 2
   async renderImages(){
-    let uri = "Images.json";
-    const res = await fetch(uri);
+    const {category_01, category_02, modalBox, body, ModalImage, photographer, alt} = this;
+    const res = await fetch("photos/photo details.json");
   
-    const animePage = Website.animePage;
-    const modelsPage = Website.modelsPage;
-
     const modalLeftButton = document.getElementById("modal-left-btn");
     const modalRightButton = document.getElementById("modal-right-btn");
     const modalCloseButton = document.getElementById("modal-close-btn");
@@ -121,39 +71,41 @@ let Website = {
     }
   
     const images = await  res.json();
-    console.log(images)
-    let animeTemplate = "";
-    let modelsTemplate = "";
+    //console.log(images)
+    let template_01 = "";
+    let template_02 = "";
   
-    images.anime.forEach(image =>{
-      animeTemplate += 
+    images.images1.forEach(image =>{
+      template_01 += 
       `
-        <img class="image" src=${image._src} alt=${image.title} />
-      `
-    })
-  
-    animePage.innerHTML = animeTemplate;
-  
-    images.models.forEach(image =>{
-      modelsTemplate +=
-      `
-        <img class="image" src=${image._src} alt=${image.title} />
+        <img class="image" src="${image.lowRezSrc}" loading = "lazy" alt="${image.alt}" title="${image.title}"/>
       `
     })
-  
-    modelsPage.innerHTML = modelsTemplate;
+    category_01.innerHTML = template_01;
 
+    images.images2.forEach(image =>{
+      template_02 += 
+      `
+        <img class="image" src=${image.lowRezSrc} loading = "lazy" alt="${image.alt}" title="${image.title}" />
+      `
+    })
+    category_02.innerHTML = template_02;
+
+    //The templates should always be before this
     const animeCategory = Array.from( document.querySelectorAll("#anime-page>.image") );
   
     const modelCategory = Array.from( document.querySelectorAll("#models-page>.image") );
 
     const imageOnClick = function() {
-      animeCategory.forEach(image =>{
+      animeCategory.forEach(image =>{ 
         image.addEventListener("click", function () {
-          if (Website.modalBox.classList == "close") {
-            Website.modalBox.classList.replace("close", "open");
-            Website.body.classList.add("no-scroll");
-            Website.ModalImage.src = this.src;
+          if (modalBox.classList == "close") {
+            modalBox.classList.replace("close", "open");
+            body.classList.add("no-scroll");
+            //ModalImage.src = this.src;
+            ModalImage.src = images.images1[animeCategory.indexOf(this)]._src;
+            photographer.innerHTML = images.images1[animeCategory.indexOf(this)].photographer;
+            alt.innerHTML = images.images1[animeCategory.indexOf(this)].alt;
             modalCurrentIndex = animeCategory.indexOf(this);
           }
         })
@@ -161,10 +113,13 @@ let Website = {
       
       modelCategory.forEach(image =>{
         image.addEventListener("click", function () {
-          if (Website.modalBox.classList == "close") {
-            Website.modalBox.classList.replace("close", "open");
-            Website.body.classList.add("no-scroll");
-            Website.ModalImage.src = this.src;
+          if (modalBox.classList == "close") {
+            modalBox.classList.replace("close", "open");
+            body.classList.add("no-scroll");
+            //ModalImage.src = this.src;
+            ModalImage.src = images.images2[modelCategory.indexOf(this)]._src;
+            photographer.innerHTML = images.images2[modelCategory.indexOf(this)].photographer;
+            alt.innerHTML = images.images2[modelCategory.indexOf(this)].alt;
             modalCurrentIndex = modelCategory.indexOf(this);
           }
         })
@@ -172,64 +127,38 @@ let Website = {
     }
     imageOnClick();
     
-    const modalButtons = function(btn) {
-      modalRightButton.addEventListener("click", function () {
-        if (Website.animePage.classList == "open-grid") {
-          if (modalCurrentIndex < animeCategory.length - 1) {
-            modalCurrentIndex = modalCurrentIndex + 1;
-            Website.ModalImage.src = animeCategory[modalCurrentIndex].src;
-          } 
-          
-          else {
-            modalCurrentIndex = 0;
-            Website.ModalImage.src = animeCategory[modalCurrentIndex].src;
-          }
-        } 
-        
-        else {
-          if (modalCurrentIndex < modelCategory.length - 1) {
-            modalCurrentIndex = modalCurrentIndex + 1;
-            Website.ModalImage.src = modelCategory[modalCurrentIndex].src;
-          } 
-          
-          else {
-            modalCurrentIndex = 0;
-            Website.ModalImage.src = modelCategory[modalCurrentIndex].src;
-          }
+    const modalButtons = () =>{
+      const navigateToModalImage = direction =>{
+        let category;
+        category_01.classList == "open-grid" ? category = images.images1 : category = images.images2;
+        console.log(category_01.classList)
+        console.log(category)
+        if(direction === "left"){
+          modalCurrentIndex > 0 ? modalCurrentIndex -= 1 :  modalCurrentIndex = category.length - 1;
+        }else{
+          modalCurrentIndex < category.length - 1 ? modalCurrentIndex += 1 :modalCurrentIndex = 0;
         }
-  
+
+        ModalImage.src = category[modalCurrentIndex]._src;
+        photographer.innerHTML = category[modalCurrentIndex].photographer;
+        alt.innerHTML = category[modalCurrentIndex].alt;
+
+      };
+      
+      modalLeftButton.addEventListener("click", ()=> {
+        navigateToModalImage("left");
       });
-  
-      modalLeftButton.addEventListener("click", function () {
-        if (Website.animePage.classList == "open-grid") {
-          if (modalCurrentIndex > 0) {
-            modalCurrentIndex = modalCurrentIndex - 1;
-            Website.ModalImage.src = animeCategory[modalCurrentIndex].src;
-          } 
-          
-          else {
-            modalCurrentIndex = animeCategory.length - 1;
-            Website.ModalImage.src = animeCategory[modalCurrentIndex].src;
-          }
-        } 
-        
-        else {
-          if (modalCurrentIndex > 0) {
-            modalCurrentIndex = modalCurrentIndex - 1;
-            Website.ModalImage.src = modelCategory[modalCurrentIndex].src;
-          } 
-          
-          else {
-            modalCurrentIndex = modelCategory.length - 1;
-            Website.ModalImage.src = modelCategory[modalCurrentIndex].src;
-          }
-        }
-  
+
+      modalRightButton.addEventListener("click", ()=> {
+        navigateToModalImage("right");
       });
   
       modalCloseButton.addEventListener("click", function () {
-        Website.modalBox.classList.replace("open", "close");
-        Website.body.classList.remove("no-scroll");
+        modalBox.classList.replace("open", "close");
+        body.classList.remove("no-scroll");
+        ModalImage.src = "";
+        photographer.innerHTML = "";
+        alt.innerHTML = "";
       });
   
     }//modalButtons
@@ -244,19 +173,18 @@ let Website = {
 Website.toggleChangePage();
 window.addEventListener("DOMContentLoaded", () => Website.renderImages());
 
-// for(let i = 0; i < 22; i++){
+
+// for(let i = 0; i < 15 ; i++){
 //   console.log(
 //     `
-//     {
-//       "title" : "image${i < 10 ? "0" + (1+i) : i+1}",
-//       "_src" : "webp/models/pic${i < 10 ? "0" + (1+i) : i+1}.webp",
-//       "id" : ${i}
-//     },
+//       {
+//         "title": "",
+//         "name" : "image-${ i < 10 ?  "0" + (i+1) : i+1 }",
+//         "photographer": "Photo by Oleg Magni from Pexels",
+//         "_src" : "photos/list1/image-${ i < 10 ?  "0" + (i+1) : i+1 }.webp",
+//         "id" : ${i}
+//       }
+
 //     `
-//   );
-
+//   )
 // }
-
-
-
-
