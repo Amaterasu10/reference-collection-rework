@@ -59,13 +59,13 @@
   }
 
   #modal-image-container {
-    margin: 0 auto;
-    overflow: hidden;
+    display: flex;
+    height: 100vh;
     border-radius: 1%;
-
     #modal-image-wrapper {
-      padding-top: 10vh;
-      margin: 0 auto;
+      display: flex;
+      margin: auto;
+      flex-direction: column;
       width: fit-content;
 
       #modal-img {
