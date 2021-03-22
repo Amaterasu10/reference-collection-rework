@@ -216,14 +216,22 @@ header nav li a:hover {
 }
 
 #modal-box #modal-image-container {
-  margin: 0 auto;
-  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
   border-radius: 1%;
 }
 
 #modal-box #modal-image-container #modal-image-wrapper {
-  padding-top: 10vh;
-  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: auto;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
