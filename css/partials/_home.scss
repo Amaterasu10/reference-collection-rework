@@ -1,0 +1,49 @@
+.header-home {
+  nav {
+    margin: 0 auto;
+  }
+}
+
+.hero {
+  background: url(../pexels-cottonbro-3826431.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  .centerer {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    margin: auto;
+    h2 {
+      margin: auto;
+    }
+  }
+}
+
+#hero-form {
+  margin: 30px auto;
+  display: flex;
+  width: 80%;
+  background-color: rgba(255, 255, 255, 0.164);
+}
+
+#hero-search {
+  font-size: 0.7rem;
+  width: 100%;
+  padding: 10px;
+  border: none;
+}
+
+#hero-submit {
+  font-size: 1rem;
+  padding: 10px;
+  border: none;
+  &:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+  }
+}

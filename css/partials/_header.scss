@@ -1,51 +1,94 @@
-header {
-  position: fixed;
+header[data-header-images] {
   padding: 12px;
+  z-index: 3;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.253);
   display: inline-flex;
   flex-flow: row wrap;
-  top: 0;
-  width: 100%;
-  background-color: #003cff;
-  z-index: 3;
-  box-shadow: 1px 1px 5px black;
 
+  a {
+    font-size: 1.5em;
+    display: inline-block;
+    text-decoration: none;
+    padding: 5px;
+    color: #010101;
+
+    &:hover {
+      color: white;
+    }
+  }
+}
+
+.header-flex {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row wrap;
   h1 {
     display: none;
     font-family: $secondary-font;
     padding-left: 2rem;
-    text-shadow: 1px 1px 1px black;
+  }
 
-    a {
-      font-size: 1.5em;
-      display: inline-block;
-      text-decoration: none;
-      padding: 5px;
-      color: transparent;
+  .search-bar {
+    font-size: 1rem;
+    background-color: white;
+    width: 50%;
+    border-radius: 50px 50px;
+    align-items: center;
+    display: flex;
 
-      &:hover {
-        color: white;
+    form {
+      width: 95%;
+      height: 100%;
+      margin: auto;
+      display: flex;
+      justify-content: flex-start;
+      border-radius: 50px 50px;
+      button {
+        font-size: inherit;
+        border: none;
+        width: fit-content;
+        height: 100%;
+        background: transparent;
+      }
+      input {
+        font-size: inherit;
+        width: 100%;
+        height: 100%;
+        border: none;
+        border-radius: 50px;
       }
     }
   }
 
-  nav {
-    align-self: center;
-    margin: 0 auto;
+  .burger-nav {
+    .bar {
+      width: 35px;
+      height: 5px;
+      background-color: black;
+      margin: 6px 0;
+    }
+  }
+}
 
-    li {
-      padding: 0px 0.625rem;
+nav {
+  display: none;
+  align-self: center;
+  margin: 0 auto;
 
-      a {
-        font-family: $third-font;
-        font-size: 1.2rem;
-        text-decoration: none;
-        color: transparent;
-        text-shadow: 1px 1px 1px black;
+  li {
+    padding: 0px 0.625rem;
+  }
 
-        &:hover {
-          color: white;
-        }
-      }
+  a {
+    font-family: $third-font;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: black;
+
+    &:hover {
+      color: white;
     }
   }
 }

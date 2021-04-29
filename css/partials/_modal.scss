@@ -1,7 +1,6 @@
 #modal-box {
   position: fixed;
   background-color: #080808f0;
-  height: 100vh;
   z-index: 4;
   top: 0;
   bottom: 0;
@@ -60,7 +59,7 @@
 
   #modal-image-container {
     display: flex;
-    height: 100vh;
+    height: 100%;
     border-radius: 1%;
     #modal-image-wrapper {
       display: flex;
@@ -68,11 +67,19 @@
       flex-direction: column;
       width: fit-content;
 
+      a {
+        color: #226fff;
+        text-decoration: none;
+      }
+      p {
+        color: white;
+      }
+
       #modal-img {
         border-radius: 1%;
         max-width: 95vw;
-        min-height: 20vh;
-        max-height: 83vh;
+        // min-height: 20vh;
+        // max-height: 83vh;
         object-fit: cover;
         display: block;
         margin: 0 auto;
