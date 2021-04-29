@@ -113,7 +113,11 @@ let Website = {
         images.forEach(image => {
 
           const newImage = document.createElement('img')
-          newImage.src = image.src.tiny.replace('&h=200&w=280','&h=10&w=20')
+          
+
+          window.innerWidth > 700 ? newImage.src = image.src.portrait.replace('&h=1200&w=800','&h=20&w=10') : 
+          newImage.src = image.src.tiny.replace('&h=200&w=280','&h=10&w=20');
+          
           let imageTitle = image.url.substr(29)
           
           while(imageTitle.includes('-') || imageTitle.includes('/')){
@@ -124,8 +128,6 @@ let Website = {
 
           newImage.alt = imageTitle
 
-
-          newImage.setAttribute('loading', 'lazy')
           newImage.className = 'image'
 
           const newDiv = document.createElement('Div')
@@ -167,7 +169,12 @@ let Website = {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) return;
           const img = entry.target;
+          
+
+          window.innerWidth > 700 ? img.src = img.src.replace('&h=20&w=10' ,'&h=1200&w=800') : 
           img.src = img.src.replace("&h=10&w=20", "&h=200&w=280");
+
+
           console.log('changed')
           imgObserver.unobserve(entry.target);
         });
