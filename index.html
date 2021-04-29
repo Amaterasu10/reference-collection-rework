@@ -1,80 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="Description" content="These are the images that I use as my reference when I am drawing" />
-    <title>Reference collecton</title>
-    <link rel="stylesheet" href="css/styles.css"/>
-    
-
-    <script src="https://kit.fontawesome.com/c81afc258c.js" crossorigin="anonymous" ></script>
-  </head>
-
-  <body id="body">
-    <header>
-      <h1>
-        <a href="index.html">Reference collection</a>
-      </h1>
-
-      <nav class="desktop-nav">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">About</a></li>
-        </ul>
-      </nav>
+    <title>General image</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-title = "home">
+    <header class ="header-home">
+        <nav> <ul>
+            <li><a href="index.html"> Home</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul></nav>
     </header>
-
-    <div id="modal-box" class="close">
-      <button class="small-btn" id="modal-close-btn" aria-label="close the modal">
-        <i class="fas fa-window-close"></i>
-      </button>
-
-      <button class="modal-btn" id="modal-left-btn" aria-label="go to the previous image">
-        <i class="fas fa-angle-left"></i>
-      </button>
-
-      <button class="modal-btn" id="modal-right-btn" aria-label="go to the next image">
-        <i class="fas fa-angle-right"></i>
-      </button>
-
-      <div id="modal-image-container">
-        <div id="modal-image-wrapper">
-          <div>
-            <h3 class="image-details" id="photographer"></h3>
-            <h3 class="image-details" id="alt"></h3>
-          </div>
-          <img id="modal-img" src="" alt="" />
-        </div>
-      </div>
-    </div>
-
-    <button class="btn left-btn" aria-label="go to the previous image"><i class="fas fa-angle-left"></i></button>
-    <button class="btn right-btn" aria-label="go to the next image"><i class="fas fa-angle-right"></i></button>
-
-    <main id="index-main">
-      <div id="grid-container">
-        <div class="title" id="anime-title">
-          <h2>Nature</h2>
-        </div>
-
-        <div class="open-grid" id="anime-page"></div>
-
-        <div class="title" id="models-title">
-          <h2>Structures</h2>
-        </div>
-
-        <div class="close" id="models-page"></div>
-      </div>
+    <main>
+        <section class = "hero">
+            <div class="centerer">
+                <h2>Search for an image theme</h2>                  
+                <div class="search-bar">
+                    <form id = "hero-form" action="/images.html">
+                        <input aria-label="search input field" id = "hero-search" autocomplete = "off" type="text" placeholder="Tag search" name="search" required>
+                        <button aria-label= "submit button" id = "hero-submit" type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer>
-      <ul class="contacts">
-        <li><i class="fab fa-facebook"></i></li>
-        <li><i class="fab fa-youtube"></i></li>
-        <li><i class="fas fa-envelope"></i></li>
-    </footer>
-    <script src="script/prototype.js"></script>
-  </body>
+</body>
+
 </html>

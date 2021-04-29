@@ -1,0 +1,93 @@
+.no-scroll {
+  overflow: hidden;
+}
+
+.title {
+  font-size: 3.125rem;
+  width: 90%;
+  margin: 0 auto;
+  background-color: #1d1c1c;
+  color: white;
+  text-align: center;
+  position: fixed;
+  opacity: 90%;
+  z-index: 1;
+}
+
+.open-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 0.25rem;
+}
+
+.open-grid img {
+  width: 100%;
+  // min-height: 11.6875rem;
+  // max-height: 11.6875rem;
+  object-fit: fill;
+  max-height: 23rem;
+  min-height: clamp(13.32rem, 22rem, 66vw);
+
+  &:hover {
+    transform: scale(1.02, 1.02);
+    cursor: pointer;
+  }
+}
+
+.image-container {
+  position: relative;
+}
+
+.image-overlay {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+  background: #4949497e;
+  color: white;
+  font-size: 0.7rem;
+  &:hover {
+    display: block;
+    transition: 1.5;
+  }
+}
+.open-grid img:hover + .image-overlay {
+  display: block;
+  transition: 1.5;
+}
+
+.open-title {
+  display: block;
+  font-size: 2.122rem;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #1d1c1c;
+  color: white;
+  text-align: center;
+  position: fixed;
+  opacity: 90%;
+  z-index: 1;
+}
+
+.close {
+  display: none;
+}
+
+.open {
+  display: block;
+}
+
+.pexel-logo {
+  width: 10rem;
+}
+
+.header-on-scroll-down {
+  position: fixed;
+  top: 0;
+}
+
+.footer-on-scroll-up {
+  position: fixed;
+  bottom: 0;
+}
