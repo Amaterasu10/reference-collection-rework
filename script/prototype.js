@@ -300,12 +300,9 @@ let Website = {
         gridContainer.style.margin = '5.2rem auto 3.25rem';
     
       }
-    
-      const limit = Math.max( document.body.scrollHeight, document.body.offsetHeight, 
-        document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight );
-    
-      if(scrollY == limit - window.innerHeight ){
-        alert(scrollY)
+
+      if(scrollY + innerHeight >= document.documentElement.scrollHeight ){
+        //
         
         getData()
         
