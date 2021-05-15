@@ -42,20 +42,6 @@ let Website = {
 
     }
 
-    const viewPortChecker = function() {
-      if(window.innerWidth > 1400){
-        return 1400
-      }
-
-      if(window.innerWidth > 700){
-        return 700
-      }
-
-      if(window.innerWidth < 700){
-        return 350
-      }
-
-    }
     let totalRendered = 0;
     async function updateValue(url) {
       
@@ -81,6 +67,7 @@ let Website = {
       //console.log(totalRendered)
       if(totalRendered !=0 && totalRendered == data.total_results){
         alert(`You have reached the end of your search result, ${totalRendered} images in total.`)
+
       }
       else if(data.photos.length == 0){
         category.innerHTML = `<p> zero search result for : "${initialSearch}"</p>`
@@ -173,9 +160,6 @@ let Website = {
 
           window.innerWidth > 700 ? img.src = img.src.replace('&h=20&w=10' ,'&h=1200&w=800') : 
           img.src = img.src.replace("&h=10&w=20", "&h=200&w=280");
-
-
-          console.log('changed')
           imgObserver.unobserve(entry.target);
         });
         }, imgOptions);
@@ -183,13 +167,6 @@ let Website = {
         categoryArray.forEach((img) => {
           imgObserver.observe(img);
         });
-
-
-
-
-
-        // image should be rendered first before these buttons, so that they can be used without error
-        
 
         const imageOnClick = function() {
           categoryArray.forEach(image =>{ 
@@ -206,7 +183,6 @@ let Website = {
                 }else if(window.innerWidth < 700){
                   ModalImage.src = imageData.thumbnails[categoryArray.indexOf(this)];
                 }
-
                 
                 modalCurrentIndex = categoryArray.indexOf(this);
                 photoLink.href = imageData.url[categoryArray.indexOf(this)];
@@ -282,12 +258,61 @@ let Website = {
     }
     
 
-  document.getElementsByClassName('burger-nav')[0].addEventListener('click',  
-  async function(ev) {
+    // document.getElementsByClassName('burger-nav')[0].addEventListener('click',  
+    // async function(ev) {
+      
+    //   getData()
+    // })
     
-    getData()
-  })
+
+    let last = 0;
+    let scrolledDown = false;
+    let scrolledUp = false;
+    const header = document.querySelector('header');
+    const footer = document.querySelector('footer');
+    const gridContainer = document.querySelector('#grid-container');
+    window.addEventListener('scroll',()=>{
     
+      if(last > window.scrollY){
+        scrolledDown = false;
+        scrolledUp = true;
+        console.log('last ' + last)
+        console.log('scroll ' + scrollY)
+      }
+      if(last < window.scrollY){
+        scrolledDown = true;
+        scrolledUp = false; 
+      }
+    
+      if(scrolledDown  && header.className == 'header-on-scroll-down'){
+        console.log(header.className)
+        header.classList.remove('header-on-scroll-down')
+        footer.classList.add('footer-on-scroll-up')
+        
+        window.innerWidth > 700 ? gridContainer.style.margin = '0.2rem auto 5.25rem' : 
+        gridContainer.style.margin = '0.2rem auto 3.25rem';
+      }
+      if(scrolledUp){
+        
+        header.classList.add('header-on-scroll-down')
+        footer.classList.remove('footer-on-scroll-up')
+        window.innerWidth > 700 ? gridContainer.style.margin = '4.2rem auto 3.25rem' : 
+        gridContainer.style.margin = '5.2rem auto 3.25rem';
+    
+      }
+    
+      const limit = Math.max( document.body.scrollHeight, document.body.offsetHeight, 
+        document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight );
+    
+      if(scrollY == limit - window.innerHeight ){
+        console.log('remove footer class')
+        
+        getData()
+        
+      }
+      last = window.scrollY;
+    })
+
   }
   
 }// Website class
@@ -295,43 +320,3 @@ let Website = {
 
 //invocation
 window.addEventListener("DOMContentLoaded", () => Website.renderImages());
-
-// if(window.innerWidth > 700){
-//   console.log(this.naturalWidth, this.height);
-// }
-
-let last = 0;
-let scrolledDown = false;
-let scrolledUp = false;
-const header = document.querySelector('header');
-const footer = document.querySelector('footer');
-const gridContainer = document.querySelector('#grid-container');
-window.addEventListener('scroll',()=>{
-
-  if(last > window.scrollY){
-    scrolledDown = true;
-    scrolledUp = false;
-  }
-  if(last < window.scrollY){
-    scrolledDown = false;
-    scrolledUp = true;
-  }
-  if(scrolledDown){
-    header.classList.add('header-on-scroll-down')
-    footer.classList.remove('footer-on-scroll-up')
-    
-    window.innerWidth > 700 ? gridContainer.style.margin = '4.2rem auto 3.25rem' : 
-    gridContainer.style.margin = '5.2rem auto 3.25rem';
-  }
-  if(scrolledUp && header.className == 'header-on-scroll-down'){
-    console.log(header.className)
-    header.classList.remove('header-on-scroll-down')
-    footer.classList.add('footer-on-scroll-up')
-    
-    window.innerWidth > 700 ? gridContainer.style.margin = '0.2rem auto 5.25rem' : 
-    gridContainer.style.margin = '0.2rem auto 3.25rem';
-
-  }
-  last = window.scrollY;
-  return
-})
