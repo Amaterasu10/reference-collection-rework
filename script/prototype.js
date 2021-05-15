@@ -305,7 +305,7 @@ let Website = {
         document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight );
     
       if(scrollY == limit - window.innerHeight ){
-        console.log('remove footer class')
+        alert(scrollY)
         
         getData()
         
