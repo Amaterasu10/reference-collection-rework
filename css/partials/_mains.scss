@@ -1,0 +1,28 @@
+#index-main {
+  #grid-container {
+    background-color: #2e2c2c;
+    margin: 1.2rem auto 1.25rem;
+    width: 90%;
+  }
+}
+
+.out-mains {
+  background-color: #1d1c1c;
+  margin: 2.7rem 0 0;
+  color: white;
+
+  section {
+    min-height: 87vh;
+    text-align: center;
+    padding: 0 3em;
+
+    h2 {
+      font-size: 2.5rem;
+      padding: 0.5em 0 0;
+    }
+
+    p {
+      margin: 1.5em 1em;
+    }
+  }
+}

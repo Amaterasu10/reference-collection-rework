@@ -1,0 +1,55 @@
+@import "./partials/variables";
+@import "./partials/global";
+@import "./partials/add-on-classes";
+@import "./partials/header";
+@import "./partials/modal";
+@import "./partials/home";
+
+.btn {
+  border: 0;
+  position: fixed;
+  top: 40vh;
+  background-color: $clr--transparent-dark-gray;
+  color: white;
+  font-size: 2.5rem;
+  padding: 1vw 1.5vw;
+  z-index: 1;
+
+  &:hover {
+    transform: scale(1.02, 1.02);
+    cursor: pointer;
+    background-color: $clr--dark-gray;
+    transition: 0.3s;
+  }
+}
+
+.right-btn {
+  right: 0;
+}
+
+@import "./partials/mains";
+
+footer {
+  display: flex;
+  background-color: black;
+  width: 100%;
+}
+
+.contacts {
+  margin: 0 auto;
+}
+
+.contacts li {
+  display: inline-block;
+  color: white;
+  padding: 0.5rem;
+}
+
+@import "./partials/mediaqueries";
+
+
+@import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital@1&family=Cormorant:ital,wght@1,700&family=Lemonada:wght@600&family=Sniglet&display=swap");
+
+@import "scss/fontawesome.scss";
+@import "scss/solid.scss";
+@import "scss/brands.scss";

@@ -1,0 +1,11 @@
+To add list
+- add a background color on each image container based on the dominant color of the incased image and while the image is loading, remove the width of the loading image until it finishes rendering. So that while the images are loading, the domint colors will be the placeholder for the images.
+
+- an array or object that will take the dominant color and image src frm the response object
+    - array = [];
+    images = res.photos
+    
+    - array.push()
+
+To change list
+- change the ImageData object and make it equal to the response object of the API.
