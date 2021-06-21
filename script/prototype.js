@@ -75,7 +75,7 @@ let Website = {
         category.innerHTML = `<p> zero search result for : "${initialSearch}"</p>`
       }
 
-      console.log(called++)
+      //console.log(called++)
 
       searchInput.value = "";
       return data
@@ -95,7 +95,7 @@ let Website = {
       let images = res.photos
       if(images.length > 0){
         
-        console.log(images)
+        //console.log(images)
 
         
 
@@ -147,7 +147,7 @@ let Website = {
           //window.innerWidth > 700 ? template_02 += `<img class="image" src="${image.src.portrait}" loading = "lazy" alt=${image.url.substr(29)} /> ` : template_02 += `<img class="image" src="${image.src.small}" loading = "lazy" alt=${image.url.substr(29)} /> `;
         });
 
-        console.log(imageData.src)
+        //console.log(imageData.src)
 
         //category.innerHTML = template_02;
 
@@ -183,7 +183,7 @@ let Website = {
                 
                 if(window.innerWidth > 1400){
                   ModalImage.src = imageData.src[categoryArray.indexOf(this)].large2x;
-                  console.log('1400')
+                  //console.log('1400')
                 }else if(window.innerWidth > 700){
                   ModalImage.src = imageData.src[categoryArray.indexOf(this)].medium;
                 }else if(window.innerWidth < 700){
@@ -192,7 +192,7 @@ let Website = {
                 
                 modalCurrentIndex = categoryArray.indexOf(this);
                 photoLink.href = imageData.url[categoryArray.indexOf(this)];
-                console.log(imageData)
+                //console.log(imageData)
                 photographer.href = imageData.photographer_url[categoryArray.indexOf(this)];
                 photographer.innerHTML = imageData.photographer[categoryArray.indexOf(this)];
               }
@@ -298,7 +298,7 @@ let Website = {
       }
       if(scrolledUp){
         
-        header.classList.add('header-on-scroll-down')
+        header.classList.add('header-on-scroll-down') 
         footer.classList.remove('footer-on-scroll-up')
         window.innerWidth > 700 ? gridContainer.style.margin = '4.2rem auto 3.25rem' : 
         gridContainer.style.margin = '5.2rem auto 3.25rem';
