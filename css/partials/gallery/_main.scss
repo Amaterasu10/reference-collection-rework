@@ -1,3 +1,46 @@
+//header styles
+
+header[data-header-images] {
+    padding: 6px;
+    z-index: 3;
+    width: 100%;
+    background-color: $clr-primary-bg;
+    display: inline-flex;
+    flex-flow: row wrap;
+  
+    a {
+      font-size: 1.5em;
+      display: inline-block;
+      text-decoration: none;
+      padding: 5px;
+      color: $clr-primary-txt;
+  
+      &:hover {
+        color: $clr-primary-txt-hov;
+        
+      }
+    }
+}
+
+//main styles
+
+main{
+  background-color: $clr-secondary-bg;
+  overflow: hidden;
+}
+
+#grid-container {
+  background-color: $clr-primary-bg-lighter;
+  margin: 1.2rem auto 1.25rem;
+  width: 90%;
+  min-height: 100vh;
+}
+
+
+
+
+//Modal styles
+
 #modal-box {
   position: fixed;
   background-color: #080808f0;
@@ -9,7 +52,7 @@
   overflow: hidden;
 
   .image-details {
-    color: white;
+    color: $clr-primary-txt;
     letter-spacing: 0.1em;
     font-size: 0.9rem;
   }
@@ -18,15 +61,15 @@
     border: 0;
     position: absolute;
     top: 40vh;
-    background-color: $clr--transparent-dark-gray;
-    color: white;
+    background-color: $clr-primary-bg;
+    color: $clr-primary-txt;
     font-size: 2.5rem;
     padding: 1vw 0.5vw;
     transition: 0.3s;
 
     &:hover {
       transform: scale(1.02, 1.02);
-      background-color: $clr--dark-gray;
+      background-color: $clr-primary-bg-lighter;
       cursor: pointer;
       padding: 1vw 1.5vw;
       transition: 0.3s;
@@ -72,7 +115,7 @@
         text-decoration: none;
       }
       p {
-        color: white;
+        color: $clr-primary-txt;
       }
 
       #modal-img {
@@ -87,3 +130,5 @@
     }
   }
 }
+
+//footer styles

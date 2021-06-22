@@ -43,7 +43,7 @@
   border: none;
   &:hover {
     background-color: black;
-    color: white;
+    color: $clr-primary-txt;
     cursor: pointer;
   }
 }

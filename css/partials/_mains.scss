@@ -1,15 +1,8 @@
-#index-main {
-  #grid-container {
-    background-color: #2e2c2c;
-    margin: 1.2rem auto 1.25rem;
-    width: 90%;
-  }
-}
 
 .out-mains {
-  background-color: #1d1c1c;
+  background-color: $clr-secondary-bg;
   margin: 2.7rem 0 0;
-  color: white;
+  color: $clr-primary-txt;
 
   section {
     min-height: 87vh;

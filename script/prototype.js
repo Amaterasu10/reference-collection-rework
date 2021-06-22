@@ -44,7 +44,6 @@ let Website = {
     }
    
     let totalRendered = 0;
-    let called = 0;
     async function updateValue(url) {
       
       const searchInput = document.getElementById("search-input");
@@ -75,8 +74,6 @@ let Website = {
         category.innerHTML = `<p> zero search result for : "${initialSearch}"</p>`
       }
 
-      //console.log(called++)
-
       searchInput.value = "";
       return data
     }
@@ -91,15 +88,21 @@ let Website = {
 
     const renderUpdate = async data =>{
       let res = await data
-      //console.log("this is the res inside renderUpdate", res)
+     // console.log("this is the res inside renderUpdate", res)
       let images = res.photos
       if(images.length > 0){
         
         //console.log(images)
 
-        
-
+        const head =  document.getElementsByTagName('head')[0]
         images.forEach(image => {
+          // const newLinkImages = document.createElement('link')
+          // newLinkImages.rel = 'preload'
+          // newLinkImages.as = "image"
+          // newLinkImages.href = image.src.portrait
+          // head.append(newLinkImages) 
+         
+
           const newImage = document.createElement('img')
           newImage.style.width = '0px';
 
@@ -114,6 +117,8 @@ let Website = {
             imageTitle= imageTitle.replace('/', '')
           }
 
+          newImage.height = image.height
+          newImage.width = image.width
           newImage.alt = imageTitle
           newImage.className = 'image'
 
@@ -147,6 +152,13 @@ let Website = {
           //window.innerWidth > 700 ? template_02 += `<img class="image" src="${image.src.portrait}" loading = "lazy" alt=${image.url.substr(29)} /> ` : template_02 += `<img class="image" src="${image.src.small}" loading = "lazy" alt=${image.url.substr(29)} /> `;
         });
 
+
+
+   
+
+
+
+
         //console.log(imageData.src)
 
         //category.innerHTML = template_02;
@@ -164,9 +176,10 @@ let Website = {
           if (!entry.isIntersecting) return;
           const img = entry.target;  
 
-          img.src = imageData.src[categoryArray.indexOf(img)].portrait
+          // img.src = imageData.src[categoryArray.indexOf(img)].portrait
+          window.innerWidth > 700 ? img.src = imageData.src[categoryArray.indexOf(img)].portrait : 
+          img.src = imageData.src[categoryArray.indexOf(img)].tiny;
           img.style.width = '100%';
-
         });
         }, imgOptions);
 

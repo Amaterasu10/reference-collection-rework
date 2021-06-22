@@ -7,7 +7,7 @@
   width: 90%;
   margin: 0 auto;
   background-color: #1d1c1c;
-  color: white;
+  color: $clr-primary-txt;
   text-align: center;
   position: fixed;
   opacity: 90%;
@@ -22,7 +22,7 @@
 
 .open-grid img {
   width: 100%;
-  min-height: 240px;
+  min-height: 25vh;
   height: 100%;
 
   &:hover{
@@ -36,6 +36,7 @@
 
 .image-container {
   position: relative;
+  min-height: fit-content;
 }
 
 .image-overlay {
@@ -45,7 +46,7 @@
   width: 100%;
   padding: 10px;
   background: #4949497e;
-  color: white;
+  color: $clr-primary-txt;
   font-size: 0.7rem;
   &:hover {
     display: block;
@@ -60,7 +61,7 @@
   width: 100%;
   margin: 0 auto;
   background-color: #1d1c1c;
-  color: white;
+  color: $clr-primary-txt;
   text-align: center;
   position: fixed;
   opacity: 90%;

@@ -1,16 +1,66 @@
-@import "./partials/variables";
-@import "./partials/global";
-@import "./partials/add-on-classes";
+@import "./partials/global/variables";
+@import "./partials/global/add-on-classes";
 @import "./partials/header";
-@import "./partials/modal";
+
 @import "./partials/home";
+
+
+
+
+
+// Modal main
+@import "./partials/gallery/main";
+@import "./partials/gallery/modal";
+
+
+
+
+
+
+
+// Global
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body,html{
+  height: 100%;
+}
+
+html {
+  font-size: 16px;
+  font-family: $primary-font;
+  background-color: $clr-secondary-bg;
+}
+
+li {
+  list-style: none;
+  display: inline-block;
+}
+
+p,
+h2 {
+  color: $clr-primary-txt;
+  line-height: 1.2;
+}
+:focus {
+  outline: none;
+}
+
+
+
+
+
 
 .btn {
   border: 0;
   position: fixed;
   top: 40vh;
   background-color: $clr--transparent-dark-gray;
-  color: white;
+  color: $clr-primary-txt;
   font-size: 2.5rem;
   padding: 1vw 1.5vw;
   z-index: 1;
@@ -18,7 +68,7 @@
   &:hover {
     transform: scale(1.02, 1.02);
     cursor: pointer;
-    background-color: $clr--dark-gray;
+    background-color: $clr-primary-bg-lighter;
     transition: 0.3s;
   }
 }
@@ -31,7 +81,7 @@
 
 footer {
   display: flex;
-  background-color: black;
+  background-color: $clr-primary-bg;
   width: 100%;
 }
 
@@ -41,7 +91,7 @@ footer {
 
 .contacts li {
   display: inline-block;
-  color: white;
+  color: $clr-primary-txt;
   padding: 0.5rem;
 }
 
