@@ -6,6 +6,13 @@
     <meta name="Description" content="These are the images that I use as my reference when I am drawing" />
     <title>General images</title>
     <link rel="stylesheet" href="css/styles.css"/>
+
+    <link rel="preconnect" href="https://ka-f.fontawesome.com">
+    <link rel="preconnect" href="https://images.pexels.com">
+    <link rel="preconnect" href="https://api.pexels.com/">
+
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="webfonts/fa-brands-400.woff2" />
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="webfonts/fa-solid-900.woff2"/>
     
   </head>
 
@@ -36,7 +43,7 @@
       </div>
     </header>
 
-    <div id="modal-box" class="close">
+    <!-- <div id="modal-box" class="close">
       <button class="small-btn" id="modal-close-btn" aria-label="close the modal">
         <i class="fas fa-window-close"></i>
       </button>
@@ -60,7 +67,42 @@
           <img id="modal-img" src="" alt="" />
         </div>
       </div>
+    </div> -->
+
+
+    <div id="modal-box" class="close">
+     
+      <div class="wrapper">
+        <div class="modal-controls">
+          <button class="small-btn" id="modal-close-btn" aria-label="close the modal">
+            <i class="fas fa-window-close"></i>
+          </button>
+    
+          <button class="modal-btn" id="modal-left-btn" aria-label="go to the previous image">
+            <i class="fas fa-angle-left"></i>
+          </button>
+    
+          <button class="modal-btn" id="modal-right-btn" aria-label="go to the next image">
+            <i class="fas fa-angle-right"></i>
+          </button>
+        </div>
+  
+        <div id="modal-image-container">
+          <div id="modal-image-wrapper">
+            <div id = "detail-container">
+              <p>This <a id = "photo-link" href="">Photo</a> was taken by 
+                <a id = "photographer" href=""></a> 
+                on Pexels.
+              </p>
+            </div>
+            <img id="modal-img" src="" alt="" />
+          </div>
+        </div>
+      </div>
+
     </div>
+
+
 
     <main id="index-main">
       <div id="grid-container">

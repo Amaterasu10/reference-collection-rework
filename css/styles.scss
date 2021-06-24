@@ -83,6 +83,7 @@ footer {
   display: flex;
   background-color: $clr-primary-bg;
   width: 100%;
+  color: $clr-primary-txt;
 }
 
 .contacts {
@@ -91,8 +92,11 @@ footer {
 
 .contacts li {
   display: inline-block;
-  color: $clr-primary-txt;
+  
   padding: 0.5rem;
+  *{
+    color: inherit;
+  }
 }
 
 @import "./partials/mediaqueries";

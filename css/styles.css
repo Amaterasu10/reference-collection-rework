@@ -24,9 +24,7 @@
 }
 
 .open-grid img {
-  width: 100%;
-  min-height: 25vh;
-  height: 100%;
+  max-width: 100%;
 }
 
 .open-grid img:hover {
@@ -289,25 +287,32 @@ main {
 
 #modal-box {
   position: fixed;
-  background-color: #080808f0;
+  overflow: overlay;
+  background-color: #4B4E6D;
   z-index: 4;
   top: 0;
-  bottom: 0;
-  right: 0;
   left: 0;
-  overflow: hidden;
+  right: 0;
+  bottom: 0;
 }
 
-#modal-box .image-details {
-  color: #FFFFFF;
-  letter-spacing: 0.1em;
-  font-size: 0.9rem;
+.wrapper {
+  width: 95%;
+  margin: 0 auto;
+  position: relative;
 }
 
-#modal-box .modal-btn {
-  border: 0;
+.modal-controls {
   position: absolute;
-  top: 40vh;
+  width: 100%;
+  height: 100vh;
+}
+
+.modal-btn {
+  border: 0;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 50vh;
   background-color: #222222;
   color: #FFFFFF;
   font-size: 2.5rem;
@@ -316,79 +321,76 @@ main {
   transition: 0.3s;
 }
 
-#modal-box .modal-btn:hover {
+.modal-btn:hover {
   -webkit-transform: scale(1.02, 1.02);
           transform: scale(1.02, 1.02);
   background-color: #4B4E6D;
   cursor: pointer;
-  padding: 1vw 1.5vw;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
 }
 
-#modal-box #modal-left-btn {
+#modal-left-btn {
   left: 0;
   border: 0;
 }
 
-#modal-box #modal-right-btn {
-  right: 1px;
+#modal-right-btn {
+  left: 100%;
 }
 
-#modal-box #modal-close-btn {
+#modal-close-btn {
   border: 0;
   position: absolute;
   background-color: transparent;
-  color: red;
+  color: #222222;
   font-size: 1.1rem;
   margin: 0.5rem;
   right: 7px;
 }
 
-#modal-box #modal-close-btn:hover {
+#modal-close-btn:hover {
   -webkit-transform: scale(1.02, 1.02);
           transform: scale(1.02, 1.02);
   cursor: pointer;
+  color: red;
 }
 
-#modal-box #modal-image-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+.image-details {
+  color: #FFFFFF;
+  letter-spacing: 0.1em;
+  font-size: 0.9rem;
+}
+
+#modal-image-container {
   height: 100%;
-  border-radius: 1%;
-}
-
-#modal-box #modal-image-container #modal-image-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding: 50px 0;
+  width: 90%;
+  margin: 0 auto;
+}
+
+#modal-image-container #modal-image-wrapper {
   margin: auto;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
 }
 
-#modal-box #modal-image-container #modal-image-wrapper a {
+#modal-image-container #modal-image-wrapper a {
   color: #226fff;
   text-decoration: none;
 }
 
-#modal-box #modal-image-container #modal-image-wrapper p {
+#modal-image-container #modal-image-wrapper p {
   color: #FFFFFF;
 }
 
-#modal-box #modal-image-container #modal-image-wrapper #modal-img {
+#modal-image-container #modal-image-wrapper #modal-img {
   border-radius: 1%;
-  max-width: 95vw;
-  -o-object-fit: cover;
-     object-fit: cover;
-  display: block;
+  max-width: 100%;
   margin: 0 auto;
+  display: block;
 }
 
 * {
@@ -474,6 +476,7 @@ footer {
   display: flex;
   background-color: #222222;
   width: 100%;
+  color: #FFFFFF;
 }
 
 .contacts {
@@ -482,43 +485,21 @@ footer {
 
 .contacts li {
   display: inline-block;
-  color: #FFFFFF;
   padding: 0.5rem;
+}
+
+.contacts li * {
+  color: inherit;
 }
 
 @media (min-width: 425px) {
   .open-grid {
-    -ms-grid-columns: 1fr 1fr 1fr;
-        grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 0.625rem;
-    padding: 4.6875rem 1.25rem 1.25rem;
-  }
-}
-
-@media (min-width: 700px) {
-  .open-title {
-    font-size: 2.68rem;
-    width: 90%;
-  }
-  #index-main #grid-container {
-    margin: 0rem auto 3.25rem;
-  }
-  .contacts {
-    margin: 0 50px 0 auto;
-  }
-  .out-mains {
-    margin: 4rem 0 0;
-  }
-  #modal-img {
-    max-height: 85vh;
-  }
-  .open-grid {
     -ms-grid-columns: (minmax(25vh, 1fr))[auto-fill];
         grid-template-columns: repeat(auto-fill, minmax(25vh, 1fr));
+    -ms-grid-columns: (minmax(25vh, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(25vh, 1fr));
+    grid-gap: 0.625rem;
     padding: 4.6875rem 1.25rem 1.25rem;
-  }
-  #modal-box .image-details {
-    font-size: 1rem;
   }
 }
 

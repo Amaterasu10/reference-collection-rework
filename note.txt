@@ -9,3 +9,6 @@ To add list
 
 To change list
 - change the ImageData object and make it equal to the response object of the API.
+
+- change the size of image container equal to the rendered size of the image, so that it fits the image.
+    - rendered size

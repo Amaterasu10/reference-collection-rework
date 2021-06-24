@@ -96,11 +96,12 @@ let Website = {
 
         const head =  document.getElementsByTagName('head')[0]
         images.forEach(image => {
-          // const newLinkImages = document.createElement('link')
-          // newLinkImages.rel = 'preload'
-          // newLinkImages.as = "image"
-          // newLinkImages.href = image.src.portrait
-          // head.append(newLinkImages) 
+          const newLinkImages = document.createElement('link')
+          newLinkImages.rel = 'preload'
+          newLinkImages.as = "image"
+          
+          newLinkImages.href = image.src.portrait
+          head.append(newLinkImages) 
          
 
           const newImage = document.createElement('img')
@@ -117,8 +118,8 @@ let Website = {
             imageTitle= imageTitle.replace('/', '')
           }
 
-          newImage.height = image.height
-          newImage.width = image.width
+          // newImage.height = image.height
+          // newImage.width = image.width
           newImage.alt = imageTitle
           newImage.className = 'image'
 
@@ -177,8 +178,8 @@ let Website = {
           const img = entry.target;  
 
           // img.src = imageData.src[categoryArray.indexOf(img)].portrait
-          window.innerWidth > 700 ? img.src = imageData.src[categoryArray.indexOf(img)].portrait : 
-          img.src = imageData.src[categoryArray.indexOf(img)].tiny;
+          // window.innerWidth > 700 ? img.src = imageData.src[categoryArray.indexOf(img)].portrait : 
+           img.src = imageData.src[categoryArray.indexOf(img)].small;
           img.style.width = '100%';
         });
         }, imgOptions);
