@@ -12,6 +12,12 @@
 //   // }
 // }
 
+@media (max-width: 472px) {
+    .open-grid {
+     grid-template-columns:repeat(auto-fit, minmax(50px, 1fr));
+    }
+}
+
 // @media (min-width: 700px) {
 //   .open-title {
 //     font-size: 2.68rem;

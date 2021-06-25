@@ -4,6 +4,8 @@ header[data-header-images] {
     padding: 6px;
     z-index: 3;
     width: 100%;
+    position: sticky;
+    top: 0;
     background-color: $clr-primary-bg;
     display: inline-flex;
     flex-flow: row wrap;
@@ -25,7 +27,7 @@ header[data-header-images] {
 //main styles
 
 main{
-  background-color: $clr-secondary-bg;
+  background-color: $clr-primary-bg-lighter;
   overflow: hidden;
 }
 

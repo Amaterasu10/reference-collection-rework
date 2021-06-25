@@ -35,7 +35,8 @@ let Website = {
       // large : [],
       // portraits : [],
       // landscapes : [],
-
+      width: [],
+      height: [],
       photographer : [],
       photographer_url : [],
       url : [],
@@ -144,13 +145,26 @@ let Website = {
           imageData.photographer_url.push(image.photographer_url)
 
           imageData.src.push(image.src)
+          imageData.height.push(image.height)
+          imageData.width.push(image.width)
 
+          if(image.width > image.height){
+            newDiv.classList.add('horizontal')
+          }
+          else if(image.width < image.height){
+            newDiv.classList.add('vertical')
+          }
+          else{
+            newDiv.classList.add('big')
+          }
+          //console.log(image)         
           //window.innerWidth > 700 ? template_02 += `<img class="image" src="${image.src.portrait}" loading = "lazy" alt=${image.url.substr(29)} /> ` : template_02 += `<img class="image" src="${image.src.small}" loading = "lazy" alt=${image.url.substr(29)} /> `;
         });
 
+        
 
 
-   
+        
 
 
 
@@ -172,19 +186,50 @@ let Website = {
           if (!entry.isIntersecting) return;
           const img = entry.target;  
 
-          // img.src = imageData.src[categoryArray.indexOf(img)].portrait
-          // window.innerWidth > 700 ? img.src = imageData.src[categoryArray.indexOf(img)].portrait : 
+          window.innerWidth > 700 ? img.src = imageData.src[categoryArray.indexOf(img)].medium : img.src = imageData.src[categoryArray.indexOf(img)].small
 
           
-          const newLinkImages = document.createElement('link')
-          newLinkImages.rel = 'preload'
-          newLinkImages.href = imageData.src[categoryArray.indexOf(img)].medium
-          newLinkImages.as = "image"         
-          head.append(newLinkImages) 
-          img.src = imageData.src[categoryArray.indexOf(img)].medium
+          const linkImagePreloader = document.createElement('link')
+          linkImagePreloader.rel = 'preload'
+          
+
+          window.innerWidth > 700 ? linkImagePreloader.href = imageData.src[categoryArray.indexOf(img)].medium : linkImagePreloader.href = imageData.src[categoryArray.indexOf(img)].small
+
+          linkImagePreloader.as = "image"         
+          head.append(linkImagePreloader) 
           img.style.width = '100%';
+
+          // img.height = img.height
+          // img.width = img.width
+
+          // console.log(img.weight)
         });
         }, imgOptions);
+
+
+        // window.addEventListener('mouseover',e =>{
+        //   if(e.target.tagName == 'IMG'){
+
+        //   console.log(`width: ${imageData.width[categoryArray.indexOf(e.target)] },
+        //   height: ${imageData.height[categoryArray.indexOf(e.target)]}`)
+
+        //   // let num1 = imageData.height[categoryArray.indexOf(e.target)];
+        //   // let num2 = imageData.width[categoryArray.indexOf(e.target)];
+        //   let num1 = 1024;
+        //   let num2 = 768;
+        //   console.log(imageData.height[categoryArray.indexOf(e.target)])
+        //   const findGCD = (a,b) =>{
+        //     if(b == 0){
+        //       return a
+        //     }
+        //     return findGCD(b , a % b)
+        //   }
+
+        //   let gcd = findGCD(num1,num2)
+        //   console.log(`aspect ratio = ${num1/ gcd } : ${num2 / gcd } ` )
+        //   }
+        // })
+
 
         categoryArray.forEach((img) => {
           imgObserver.observe(img);
@@ -199,7 +244,6 @@ let Website = {
                 
                 if(window.innerWidth > 1400){
                   ModalImage.src = imageData.src[categoryArray.indexOf(this)].large2x;
-                  //console.log('1400')
                 }else if(window.innerWidth > 700){
                   ModalImage.src = imageData.src[categoryArray.indexOf(this)].medium;
                 }else if(window.innerWidth < 700){
@@ -266,14 +310,14 @@ let Website = {
       photographer.href = "";
     });
 
-    renderUpdate(updateValue(`https://api.pexels.com/v1/search?orientation=portrait&per_page=16&page&query=${initialSearch}`))
-    let totalImages = 16;
+    renderUpdate(updateValue(`https://api.pexels.com/v1/search?per_page=16&page&query=${initialSearch}`))
+    let totalImages = 32;
     let requestedPage = 2;
 
 
     const getData = async () =>{
       //const nextData = await fetchNextPage(data,requestedPage)
-      let res = updateValue(`https://api.pexels.com/v1/search?orientation=portrait&per_page=${totalImages}&page=${requestedPage}&query=${initialSearch}`)
+      let res = updateValue(`https://api.pexels.com/v1/search?per_page=${totalImages}&page=${requestedPage}&query=${initialSearch}`)
       //console.log('this is the res inside getData',res)
       requestedPage++;
       //console.log(res)
@@ -330,7 +374,8 @@ let Website = {
       }
       last = window.scrollY;
     })
-
+    
+ 
   }
   
 }// Website class

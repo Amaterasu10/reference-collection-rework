@@ -4,8 +4,9 @@
 
 #modal-box {
   position: fixed;
+  min-height: 100vh;
   overflow: overlay;
-  background-color: $clr-primary-bg-lighter;
+  background-color: $clr-primary-bg;
   z-index: 4;
   top: 0;
   left: 0;
@@ -16,20 +17,21 @@
 }
 .wrapper{
     width: 95%;
+    min-height: 100%;
     margin: 0 auto;
     position: relative;
 }
 .modal-controls{
     position: absolute;
     width: 100%;
-    height:100vh;
+    min-height:100%;
 }
 
 .modal-btn {
     border: 0;
     position: sticky;
     top: 50vh;
-    background-color: $clr-primary-bg;
+    background-color: $clr-primary-bg-lighter;
     color: $clr-primary-txt;
     font-size: 2.5rem;
     padding: 1vw 0.5vw;
@@ -37,7 +39,8 @@
 
     &:hover {
         transform: scale(1.02, 1.02);
-        background-color: $clr-primary-bg-lighter;
+        background-color: $clr-secondary-bg;
+        color: $clr-secondary-txt;
         cursor: pointer;
     //   padding: 1vw 1.5vw;
     //   transition: 0.3s;
@@ -55,17 +58,16 @@ left: 100%;
 
 #modal-close-btn {
 border: 0;
-position: absolute;
+top: 10px;
+position: sticky;
 background-color: transparent;
-color: $clr-primary-bg;
-font-size: 1.1rem;
-margin: 0.5rem;
-right: 7px;
+color: red;
+font-size: 2rem;
+left: 100%;
 
     &:hover {
         transform: scale(1.02, 1.02);
         cursor: pointer;
-        color: red;
     }
 }
     
@@ -82,37 +84,39 @@ right: 7px;
 
 
 #modal-image-container {
-height: 100%;
+min-height: 100vh;
 display: flex;
 padding:50px 0;
 width: 90%;
 margin: 0 auto;
 
-#modal-image-wrapper {
-    margin: auto;
-    width: fit-content;
+    #modal-image-wrapper {
+        margin: auto;
+        width: fit-content;
+        text-align: center;
+        z-index: 1;
+        
+        a {
+        color: $clr-primary-txt-hov;
+        text-decoration: none;
+        }
+        p {
+        color: $clr-primary-txt;
+        }
 
-    a {
-    color: #226fff;
-    text-decoration: none;
+        #modal-img {
+        border-radius: 1%;
+        max-width: 100%;
+        margin: 0 auto;
+        display: block;
+        }
     }
-    p {
-    color: $clr-primary-txt;
-    }
-
-    #modal-img {
-    border-radius: 1%;
-    max-width: 100%;
-    margin: 0 auto;
-    display: block;
-    }
-}
 }
 
 
 // #modal-box{
 //   width: 100%;
-//   height: 100%;
+//   min-height: 100%;
 //   background-color: green;
 // }
 
