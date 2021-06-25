@@ -119,8 +119,8 @@
 //   }
 // }
 
-// @media (min-width: 2000px) {
-//   html {
-//     font-size: 24px;
-//   }
-// }
+@media (min-width: 2000px) {
+    .open-grid {
+        grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
+    }
+}

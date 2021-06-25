@@ -241,8 +241,10 @@ let Website = {
               if (modalBox.classList == "close") {
                 modalBox.classList.replace("close", "open");
                 body.classList.add("no-scroll");
-                
-                if(window.innerWidth > 1400){
+                if(window.innerWidth > 1900){
+                  ModalImage.src = imageData.src[categoryArray.indexOf(this)].original;
+                }
+                else if(window.innerWidth > 1400){
                   ModalImage.src = imageData.src[categoryArray.indexOf(this)].large2x;
                 }else if(window.innerWidth > 700){
                   ModalImage.src = imageData.src[categoryArray.indexOf(this)].medium;
