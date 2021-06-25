@@ -68,7 +68,7 @@ let Website = {
       //console.log(totalRendered)
       if(totalRendered !=0 && totalRendered == data.total_results){
         alert(`You have reached the end of your search result, ${totalRendered} images in total.`)
-        updateValue(null)
+        updateValue()
       }
       else if(data.photos.length == 0){
         category.innerHTML = `<p> zero search result for : "${initialSearch}"</p>`
@@ -94,14 +94,9 @@ let Website = {
         
         //console.log(images)
 
-        const head =  document.getElementsByTagName('head')[0]
+        
         images.forEach(image => {
-          const newLinkImages = document.createElement('link')
-          newLinkImages.rel = 'preload'
-          newLinkImages.as = "image"
           
-          newLinkImages.href = image.src.portrait
-          head.append(newLinkImages) 
          
 
           const newImage = document.createElement('img')
@@ -170,7 +165,7 @@ let Website = {
         categoryArray = Array.from( document.querySelectorAll("#anime-page .image") );
         //console.log(categoryArray)
 
-
+        const head =  document.getElementsByTagName('head')[0]
         const imgOptions = {};
         const imgObserver = new IntersectionObserver((entries, imgObserver) => {
         entries.forEach((entry) => {
@@ -179,7 +174,14 @@ let Website = {
 
           // img.src = imageData.src[categoryArray.indexOf(img)].portrait
           // window.innerWidth > 700 ? img.src = imageData.src[categoryArray.indexOf(img)].portrait : 
-           img.src = imageData.src[categoryArray.indexOf(img)].small;
+
+          
+          const newLinkImages = document.createElement('link')
+          newLinkImages.rel = 'preload'
+          newLinkImages.href = imageData.src[categoryArray.indexOf(img)].medium
+          newLinkImages.as = "image"         
+          head.append(newLinkImages) 
+          img.src = imageData.src[categoryArray.indexOf(img)].medium
           img.style.width = '100%';
         });
         }, imgOptions);
@@ -264,14 +266,14 @@ let Website = {
       photographer.href = "";
     });
 
-    renderUpdate(updateValue(`https://api.pexels.com/v1/search?per_page=16&page&query=${initialSearch}`))
+    renderUpdate(updateValue(`https://api.pexels.com/v1/search?orientation=portrait&per_page=16&page&query=${initialSearch}`))
     let totalImages = 16;
     let requestedPage = 2;
 
 
     const getData = async () =>{
       //const nextData = await fetchNextPage(data,requestedPage)
-      let res = updateValue(`https://api.pexels.com/v1/search?per_page=${totalImages}&page=${requestedPage}&query=${initialSearch}`)
+      let res = updateValue(`https://api.pexels.com/v1/search?orientation=portrait&per_page=${totalImages}&page=${requestedPage}&query=${initialSearch}`)
       //console.log('this is the res inside getData',res)
       requestedPage++;
       //console.log(res)
@@ -294,30 +296,30 @@ let Website = {
     const gridContainer = document.querySelector('#grid-container');
     window.addEventListener('scroll',()=>{
     
-      if(last > window.scrollY){
-        scrolledDown = false;
-        scrolledUp = true;
-      }
-      if(last < window.scrollY){
-        scrolledDown = true;
-        scrolledUp = false; 
-      }
+      // if(last > window.scrollY){
+      //   scrolledDown = false;
+      //   scrolledUp = true;
+      // }
+      // if(last < window.scrollY){
+      //   scrolledDown = true;
+      //   scrolledUp = false; 
+      // }
     
-      if(scrolledDown  && header.className == 'header-on-scroll-down'){
-        header.classList.remove('header-on-scroll-down')
-        footer.classList.add('footer-on-scroll-up')
+      // if(scrolledDown  && header.className == 'header-on-scroll-down'){
+      //   header.classList.remove('header-on-scroll-down')
+      //   footer.classList.add('footer-on-scroll-up')
         
-        window.innerWidth > 700 ? gridContainer.style.margin = '0.2rem auto 5.25rem' : 
-        gridContainer.style.margin = '0.2rem auto 3.25rem';
-      }
-      if(scrolledUp){
+      //   window.innerWidth > 700 ? gridContainer.style.margin = '0.2rem auto 5.25rem' : 
+      //   gridContainer.style.margin = '0.2rem auto 3.25rem';
+      // }
+      // if(scrolledUp){
         
-        header.classList.add('header-on-scroll-down') 
-        footer.classList.remove('footer-on-scroll-up')
-        window.innerWidth > 700 ? gridContainer.style.margin = '4.2rem auto 3.25rem' : 
-        gridContainer.style.margin = '5.2rem auto 3.25rem';
+      //   header.classList.add('header-on-scroll-down') 
+      //   footer.classList.remove('footer-on-scroll-up')
+      //   window.innerWidth > 700 ? gridContainer.style.margin = '4.2rem auto 3.25rem' : 
+      //   gridContainer.style.margin = '5.2rem auto 3.25rem';
     
-      }
+      // }
 
     
       if(scrollY + innerHeight >= document.documentElement.scrollHeight){

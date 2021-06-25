@@ -18,12 +18,13 @@
 .open-grid {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
-  grid-gap: 0.25rem;
+  grid-gap: 0.25em;
+  -ms-grid-columns: (minmax(25vh, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(25vh, 1fr));
 }
 
 .open-grid img {
+  height: 100%;
   max-width: 100%;
 }
 
@@ -37,9 +38,7 @@
 
 .image-container {
   position: relative;
-  min-height: -webkit-fit-content;
-  min-height: -moz-fit-content;
-  min-height: fit-content;
+  min-height: 25vh;
 }
 
 .image-overlay {
@@ -490,17 +489,6 @@ footer {
 
 .contacts li * {
   color: inherit;
-}
-
-@media (min-width: 425px) {
-  .open-grid {
-    -ms-grid-columns: (minmax(25vh, 1fr))[auto-fill];
-        grid-template-columns: repeat(auto-fill, minmax(25vh, 1fr));
-    -ms-grid-columns: (minmax(25vh, 1fr))[auto-fit];
-        grid-template-columns: repeat(auto-fit, minmax(25vh, 1fr));
-    grid-gap: 0.625rem;
-    padding: 4.6875rem 1.25rem 1.25rem;
-  }
 }
 
 /*!
