@@ -5,7 +5,10 @@
 #modal-box {
   position: fixed;
   min-height: 100vh;
-  overflow: overlay;
+  overflow: scroll;
+  @supports(overflow: overlay){
+    overflow: overlay;
+  }
   background-color: $clr-primary-bg;
   z-index: 4;
   top: 0;

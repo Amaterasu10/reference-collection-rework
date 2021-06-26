@@ -46,7 +46,7 @@ let Website = {
    
     let totalRendered = 0;
     async function updateValue(url) {
-      
+      console.log(url)
       const searchInput = document.getElementById("search-input");
       
       const res = await fetch(url,{
@@ -56,7 +56,7 @@ let Website = {
       });
       
       if(res.status == 429){
-        searchInput.placeholder = 'We have reached the maximum request possible, please wait for a while. ';
+        alert('We have reached the maximum request possible, please wait for a while. ')
         searchInput.disabled = true;
         
       }
@@ -68,8 +68,7 @@ let Website = {
       totalRendered += data.photos.length;
       //console.log(totalRendered)
       if(totalRendered !=0 && totalRendered == data.total_results){
-        alert(`You have reached the end of your search result, ${totalRendered} images in total.`)
-        updateValue()
+        alert(`All the ${totalRendered} images related to your search has been rendered. Scrolling won't load more images.`)
       }
       else if(data.photos.length == 0){
         category.innerHTML = `<p> zero search result for : "${initialSearch}"</p>`
@@ -95,7 +94,8 @@ let Website = {
         
         //console.log(images)
 
-        
+        document.getElementsByTagName('title')[0].innerHTML = ` ${res.total_results} results for ${initialSearch}`
+
         images.forEach(image => {
           
          
@@ -120,7 +120,19 @@ let Website = {
           newImage.className = 'image'
 
           const newDiv = document.createElement('Div')
+          
           newDiv.className = 'image-container'
+
+          if(image.width > image.height){
+            newDiv.classList.add('horizontal')
+          }
+          else if(image.width < image.height){
+            newDiv.classList.add('vertical')
+          }
+          else{
+            newDiv.classList.add('big')
+          }
+
           newDiv.style.backgroundColor = image.avg_color;
 
 
@@ -148,15 +160,7 @@ let Website = {
           imageData.height.push(image.height)
           imageData.width.push(image.width)
 
-          if(image.width > image.height){
-            newDiv.classList.add('horizontal')
-          }
-          else if(image.width < image.height){
-            newDiv.classList.add('vertical')
-          }
-          else{
-            newDiv.classList.add('big')
-          }
+         
           //console.log(image)         
           //window.innerWidth > 700 ? template_02 += `<img class="image" src="${image.src.portrait}" loading = "lazy" alt=${image.url.substr(29)} /> ` : template_02 += `<img class="image" src="${image.src.small}" loading = "lazy" alt=${image.url.substr(29)} /> `;
         });
@@ -312,10 +316,10 @@ let Website = {
       photographer.href = "";
     });
 
-    renderUpdate(updateValue(`https://api.pexels.com/v1/search?per_page=16&page&query=${initialSearch}`))
+
     let totalImages = 32;
     let requestedPage = 2;
-
+    renderUpdate(updateValue(`https://api.pexels.com/v1/search?per_page=${totalImages}&page&query=${initialSearch}`))
 
     const getData = async () =>{
       //const nextData = await fetchNextPage(data,requestedPage)
