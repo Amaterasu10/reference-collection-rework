@@ -130,7 +130,6 @@
   font-size: 1rem;
   background-color: white;
   width: 50%;
-  border-radius: 50px 50px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -290,12 +289,12 @@ header[data-header-images] a:hover {
 }
 
 main {
-  background-color: #4B4E6D;
+  background-color: #FFFFFF;
   overflow: hidden;
 }
 
 #grid-container {
-  background-color: #4B4E6D;
+  background-color: #FFFFFF;
   margin: 1.2rem auto 1.25rem;
   width: 90%;
   min-height: 100vh;
@@ -348,7 +347,7 @@ main {
 }
 
 #modal-left-btn {
-  left: 0;
+  right: 100%;
   border: 0;
 }
 
@@ -389,7 +388,7 @@ main {
   margin: 0 auto;
 }
 
-#modal-image-container #modal-image-wrapper {
+#modal-image-wrapper {
   margin: auto;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -398,16 +397,16 @@ main {
   z-index: 1;
 }
 
-#modal-image-container #modal-image-wrapper a {
+#modal-image-wrapper a {
   color: #84DCC6;
   text-decoration: none;
 }
 
-#modal-image-container #modal-image-wrapper p {
+#modal-image-wrapper p {
   color: #FFFFFF;
 }
 
-#modal-image-container #modal-image-wrapper #modal-img {
+#modal-img {
   border-radius: 1%;
   max-width: 100%;
   margin: 0 auto;
@@ -517,6 +516,19 @@ footer {
   .open-grid {
     -ms-grid-columns: (minmax(50px, 1fr))[auto-fit];
         grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  }
+}
+
+@media (max-width: 675px) {
+  #modal-img {
+    max-width: 90%;
+  }
+}
+
+@media (min-width: 1000px) {
+  .open-grid {
+    -ms-grid-columns: (minmax(150px, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
 }
 

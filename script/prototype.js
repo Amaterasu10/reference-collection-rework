@@ -247,7 +247,7 @@ let Website = {
                 else if(window.innerWidth > 1400){
                   ModalImage.src = imageData.src[categoryArray.indexOf(this)].large2x;
                 }else if(window.innerWidth > 700){
-                  ModalImage.src = imageData.src[categoryArray.indexOf(this)].medium;
+                  ModalImage.src = imageData.src[categoryArray.indexOf(this)].large;
                 }else if(window.innerWidth < 700){
                   ModalImage.src = imageData.src[categoryArray.indexOf(this)].medium;
                 }
