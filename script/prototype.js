@@ -188,14 +188,14 @@ let Website = {
         const imgObserver = new IntersectionObserver((entries, imgObserver) => {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) return;
-          const img = entry.target;
+          const img = entry.target;  
           img.src = imageData.src[categoryArray.indexOf(img)].medium
           
           const linkImagePreloader = document.createElement('link')
           linkImagePreloader.rel = 'preload'
           
 
-          window.innerWidth > 700 ? linkImagePreloader.href = imageData.src[categoryArray.indexOf(img)].medium : linkImagePreloader.href = imageData.src[categoryArray.indexOf(img)].small
+          linkImagePreloader.href = imageData.src[categoryArray.indexOf(img)].medium
 
           linkImagePreloader.as = "image"         
           head.append(linkImagePreloader) 

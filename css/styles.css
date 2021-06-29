@@ -39,6 +39,7 @@
 
 .image-container {
   position: relative;
+  min-height: 15vh;
 }
 
 .image-overlay {
@@ -553,6 +554,10 @@ footer {
   }
   .desktop-nav {
     display: block;
+  }
+  .image-container {
+    position: relative;
+    min-height: 25vh;
   }
 }
 

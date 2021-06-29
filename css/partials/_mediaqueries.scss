@@ -35,6 +35,10 @@
     .desktop-nav{
         display: block;
     }
+    .image-container {
+        position: relative;
+        min-height: 25vh;
+      }
 }
 
 @media (min-width: 1077px) {
