@@ -317,6 +317,7 @@ main {
 }
 
 .banner {
+  width: 100%;
   text-align: center;
   font-size: 1.5em;
   color: #222222;

@@ -64,13 +64,18 @@ let Website = {
       }
 
       const data = await  res.json();
+      const banner = document.querySelector('.banner')
       totalRendered += data.photos.length;
       //console.log(totalRendered)
       if(totalRendered !=0 && totalRendered == data.total_results){
-        const banner = document.querySelector('.banner')
-        banner.innerHTML = `All the ${totalRendered} images related to your search has been rendered. Scrolling won't load more images.`
+        
+        banner.innerHTML = `All the images has been loaded. total search result ${data.total_results}`
       }
       else if(data.photos.length == 0){
+        banner.style.position = "absolute"
+        banner.style.top = "50vh"
+
+        banner.innerHTML = `zero search result for : "${initialSearch}"`
         category.innerHTML = `<p> zero search result for : "${initialSearch}"</p>`
       }
 
