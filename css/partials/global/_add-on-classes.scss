@@ -55,6 +55,9 @@
   background: #4949497e;
   color: $clr-primary-txt;
   font-size: 0.7rem;
+  *{
+    font-weight: 100;
+  }
   &:hover {
     display: block;
     transition: 1.5;

@@ -14,5 +14,10 @@ main{
   min-height: 100vh;
 }
 
-
+.banner{
+  text-align: center;
+  font-size: 1.5em;
+  color: $clr-secondary-txt;
+  background-color: wheat;
+}
 //footer styles

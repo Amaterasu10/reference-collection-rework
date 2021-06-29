@@ -46,7 +46,6 @@ let Website = {
    
     let totalRendered = 0;
     async function updateValue(url) {
-      console.log(url)
       const searchInput = document.getElementById("search-input");
       
       const res = await fetch(url,{
@@ -68,7 +67,8 @@ let Website = {
       totalRendered += data.photos.length;
       //console.log(totalRendered)
       if(totalRendered !=0 && totalRendered == data.total_results){
-        alert(`All the ${totalRendered} images related to your search has been rendered. Scrolling won't load more images.`)
+        const banner = document.querySelector('.banner')
+        banner.innerHTML = `All the ${totalRendered} images related to your search has been rendered. Scrolling won't load more images.`
       }
       else if(data.photos.length == 0){
         category.innerHTML = `<p> zero search result for : "${initialSearch}"</p>`
@@ -136,12 +136,14 @@ let Website = {
           newDiv.style.backgroundColor = image.avg_color;
 
 
-          const newOverlay = document.createElement('Div')
-          newOverlay.className = 'image-overlay'
+          const newOverlayContainer = document.createElement('Div')
+          const newOverlay = document.createElement('h3')
+          newOverlayContainer.className = 'image-overlay'
           newOverlay.innerHTML = imageTitle
           
           newDiv.append(newImage)
-          newDiv.append(newOverlay)
+          newOverlayContainer.append(newOverlay)
+          newDiv.append(newOverlayContainer)
           category.append(newDiv)
 
           // imageData.thumbnails.push(image.src.medium)
@@ -387,4 +389,3 @@ let Website = {
 
 //invocation
 window.addEventListener("DOMContentLoaded", () => Website.renderImages());
-console.log('wazzup')

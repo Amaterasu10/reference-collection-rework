@@ -53,6 +53,10 @@
   font-size: 0.7rem;
 }
 
+.image-overlay * {
+  font-weight: 100;
+}
+
 .image-overlay:hover {
   display: block;
   -webkit-transition: 1.5;
@@ -312,6 +316,13 @@ main {
   min-height: 100vh;
 }
 
+.banner {
+  text-align: center;
+  font-size: 1.5em;
+  color: #222222;
+  background-color: wheat;
+}
+
 #modal-box {
   position: fixed;
   min-height: 100vh;
@@ -328,6 +339,19 @@ main {
   #modal-box {
     overflow: overlay;
   }
+}
+
+#modal-box::-webkit-scrollbar {
+  width: 10px;
+}
+
+#modal-box::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+          box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+#modal-box::-webkit-scrollbar-thumb {
+  background-color: #4B4E6D;
 }
 
 .wrapper {
