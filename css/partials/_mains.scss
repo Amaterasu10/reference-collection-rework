@@ -1,21 +1,31 @@
 
 .out-mains {
-  background-color: $clr-secondary-bg;
-  margin: 2.7rem 0 0;
+  background-color: $clr-primary-bg-lighter;
+  min-height: 100vh;
   color: $clr-primary-txt;
 
-  section {
-    min-height: 87vh;
+  
+}
+
+section {
+
+  h2 {
     text-align: center;
-    padding: 0 3em;
-
-    h2 {
-      font-size: 2.5rem;
-      padding: 0.5em 0 0;
-    }
-
-    p {
-      margin: 1.5em 1em;
-    }
+    font-size: 2.5rem;
+    padding: 0.5em 0 0;
   }
+
+  p {
+    margin: 1.5em 1em;
+  }
+}
+
+.form-container{
+  padding: 10px;
+  background-color: $clr-primary-bg;
+  display: flex;
+}
+
+form{
+  margin: auto;
 }

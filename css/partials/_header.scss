@@ -1,3 +1,35 @@
+//header styles
+
+header{
+  background-color: $clr-primary-bg;
+}
+
+
+
+header[data-header-images] {
+  padding: 6px;
+  z-index: 3;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  background-color: $clr-primary-bg;
+  display: inline-flex;
+  flex-flow: row wrap;
+
+  a {
+
+    display: inline-block;
+    text-decoration: none;
+    padding: 5px;
+    color: $clr-primary-txt;
+
+    &:hover {
+      color: $clr-primary-txt-hov;
+      
+    }
+  }
+}
+
 .header-flex {
   width: 100%;
   display: flex;
@@ -7,7 +39,7 @@
   h1 {
     display: none;
     font-family: $secondary-font;
-    padding-left: 2rem;
+    margin: auto;
   }
 
   .search-bar {

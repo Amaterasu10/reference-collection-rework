@@ -3,18 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact</title>
-    <link rel="stylesheet" href="css/styles.css" />
-
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lemonada:wght@600&family=Sniglet&display=swap"
-      rel="stylesheet"
-    />
-
-    <script
-      src="https://kit.fontawesome.com/c81afc258c.js"
-      crossorigin="anonymous"
-    ></script>
+    <title>Contact me</title>
+    <link rel="stylesheet" href="css/styles.css"/>
   </head>
 
   <body>
@@ -35,39 +25,41 @@
     <main class="out-mains">
       <section>
         <h2>Contact me</h2>
-        <form action="">
-          <div>
-            <label for="name">Username</label>
-            <input
-              type="text"
-              name="name"
-              id="name"
-              placeholder="username"
-              required
-            />
-          </div>
-
-          <div>
-            <label for="password">Password</label>
-            <input
-              type="password"
-              name="password"
-              id="password"
-              placeholder="password"
-              required
-            />
-          </div>
-          <button type="submit">Submit</button>
-        </form>
+        <div class="form-container">
+          <form action="">
+            <div>
+              <label for="name">Username</label>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="username"
+                required
+              />
+            </div>
+  
+            <div>
+              <label for="password">Password</label>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="password"
+                required
+              />
+            </div>
+            <button type="submit">Submit</button>
+          </form>
+        </div>
       </section>
     </main>
 
-    <footer>
+    <footer data-footer-images>
       <ul class="contacts">
         <li><i class="fab fa-facebook"></i></li>
         <li><i class="fab fa-youtube"></i></li>
         <li><i class="fas fa-envelope"></i></li>
-      </ul>
+        <li><a href="https://www.pexels.com">Photos provided by Pexels</a></li>
     </footer>
   </body>
 </html>

@@ -27,11 +27,26 @@
     }
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 700px) {
+    
+    .burger-nav{
+        display: none;
+    }
+    .desktop-nav{
+        display: block;
+    }
+}
+
+@media (min-width: 1077px) {
+    .header-flex > h1{
+     display:inline ;   
+    }
     .open-grid {
      grid-template-columns:repeat(auto-fit, minmax(150px, 1fr));
     }
 }
+
+
 
 // @media (min-width: 700px) {
 //   .open-title {

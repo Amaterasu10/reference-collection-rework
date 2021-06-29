@@ -73,14 +73,6 @@ left: 100%;
         cursor: pointer;
     }
 }
-    
-
-
-.image-details {
-    color: $clr-primary-txt;
-    letter-spacing: 0.1em;
-    font-size: 0.9rem;
-}
 
 
 
@@ -113,6 +105,9 @@ margin: 0 auto;
     
 }
 
+#detail-container{
+    padding: 10px;
+}
 
 #modal-img {
     border-radius: 1%;
@@ -121,13 +116,4 @@ margin: 0 auto;
     display: block;
 }
 
-// #modal-box{
-//   width: 100%;
-//   min-height: 100%;
-//   background-color: green;
-// }
-
-// .controls{
-//     background-color: yellow;
-// }
 

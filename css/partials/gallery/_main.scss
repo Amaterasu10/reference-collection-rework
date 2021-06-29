@@ -1,28 +1,4 @@
-//header styles
 
-header[data-header-images] {
-    padding: 6px;
-    z-index: 3;
-    width: 100%;
-    position: sticky;
-    top: 0;
-    background-color: $clr-primary-bg;
-    display: inline-flex;
-    flex-flow: row wrap;
-  
-    a {
-      font-size: 1.5em;
-      display: inline-block;
-      text-decoration: none;
-      padding: 5px;
-      color: $clr-primary-txt;
-  
-      &:hover {
-        color: $clr-primary-txt-hov;
-        
-      }
-    }
-}
 
 //main styles
 
