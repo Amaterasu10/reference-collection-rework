@@ -387,3 +387,4 @@ let Website = {
 
 //invocation
 window.addEventListener("DOMContentLoaded", () => Website.renderImages());
+console.log('wazzup')
