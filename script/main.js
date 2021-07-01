@@ -194,12 +194,31 @@ let Website = {
         });
         }, imgOptions);
 
+        let requestNow = 0;
         categoryArray.forEach((img) => {
           imgObserver.observe(img);
+          requestNow++
         });
 
-        
+        // const banner = document.createElement('Div')
+        // banner.classList.add('banner')
+        // banner.innerHTML = 'Loading more images...'
+        // const footer = document.getElementsByTagName('footer')[0]
 
+        //footer.insertBefore(banner, footer.firstChild)
+        
+        const bannerOptions = {}
+        const bannerObserver = new IntersectionObserver((entries, bannerObserver) => {
+
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;          
+            getData()
+
+          });
+
+        },bannerOptions)
+
+        bannerObserver.observe(banner)
         if('all images are loaded and banner is visible'){
           'getdata'
         } 
@@ -279,29 +298,25 @@ let Website = {
     let totalImages = 32;
     let requestedPage = 2;
     renderUpdate(updateValue(`https://api.pexels.com/v1/search?per_page=${totalImages}&page&query=${initialSearch}`))
-
+    var lastCalled = 0;
+    var delay = 500;
     const getData = async () =>{
+      
+
+      if (lastCalled >= (Date.now() - delay))
+        return;
+      
+
       //const nextData = await fetchNextPage(data,requestedPage)
       let res = updateValue(`https://api.pexels.com/v1/search?per_page=${totalImages}&page=${requestedPage}&query=${initialSearch}`)
       //console.log('this is the res inside getData',res)
       requestedPage++;
       //console.log(res)
       renderUpdate(res)
+      lastCalled = Date.now();
     }
-
-    const bannerOptions = {}
-    const bannerObserver = new IntersectionObserver((entries, bannerObserver) => {
-
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-
-        // getData()
-
-      });
-
-    },bannerOptions);
-
-    bannerObserver.observe(banner)
+    console.log(document.getElementsByTagName('footer'))
+    
        
   }
   
