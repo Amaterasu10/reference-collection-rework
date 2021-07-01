@@ -45,7 +45,9 @@ let Website = {
     }
    
     let totalRendered = 0;
+    const banner = document.querySelector('.banner')
     async function updateValue(url) {
+      console.log(url)
       const searchInput = document.getElementById("search-input");
       
       const res = await fetch(url,{
@@ -57,19 +59,22 @@ let Website = {
       if(res.status == 429){
         alert('We have reached the maximum request possible, please wait for a while. ')
         searchInput.disabled = true;
+
         
       }
       if(res.status != 200){
         throw new Error("Failed to retrieve the data");
+
       }
 
       const data = await  res.json();
-      const banner = document.querySelector('.banner')
+      
       totalRendered += data.photos.length;
       //console.log(totalRendered)
       if(totalRendered !=0 && totalRendered == data.total_results){
         
         banner.innerHTML = `All the images has been loaded. total search result ${data.total_results}`
+
       }
       else if(data.photos.length == 0){
         banner.style.position = "absolute"
@@ -77,6 +82,7 @@ let Website = {
 
         banner.innerHTML = `zero search result for : "${initialSearch}"`
         category.innerHTML = `<p> zero search result for : "${initialSearch}"</p>`
+
       }
 
       searchInput.value = "";
@@ -90,10 +96,11 @@ let Website = {
     let modalCurrentIndex = 0;
     let categoryArray
     
-
+    let called = 0;
     const renderUpdate = async data =>{
       let res = await data
-     // console.log("this is the res inside renderUpdate", res)
+      console.log(called++)
+      //console.log("this is the res inside renderUpdate", res)
       let images = res.photos
       if(images.length > 0){
         
@@ -151,14 +158,6 @@ let Website = {
           newDiv.append(newOverlayContainer)
           category.append(newDiv)
 
-          // imageData.thumbnails.push(image.src.medium)
-          // imageData.mobileThumnnails.push(image.src.small)
-          // imageData.mobile.push(image.src.medium)
-          // imageData.hd.push(image.src.original)
-          // imageData.large2x.push(image.src.large2x)
-          // imageData.large.push(image.src.large)
-          // imageData.portraits.push(image.src.portrait)
-          // imageData.landscapes.push(image.src.landscapes)
           imageData.photographer.push(image.photographer)
           imageData.url.push(image.url)
           imageData.photographer_url.push(image.photographer_url)
@@ -167,26 +166,10 @@ let Website = {
           imageData.height.push(image.height)
           imageData.width.push(image.width)
 
-         
-          //console.log(image)         
-          //window.innerWidth > 700 ? template_02 += `<img class="image" src="${image.src.portrait}" loading = "lazy" alt=${image.url.substr(29)} /> ` : template_02 += `<img class="image" src="${image.src.small}" loading = "lazy" alt=${image.url.substr(29)} /> `;
         });
 
-        
-
-
-        
-
-
-
-
-        //console.log(imageData.src)
-
-        //category.innerHTML = template_02;
-
-        
       
-        //The templates should always be before this
+        // an array of images that are present in anime-page
         categoryArray = Array.from( document.querySelectorAll("#anime-page .image") );
         //console.log(categoryArray)
 
@@ -208,41 +191,18 @@ let Website = {
           head.append(linkImagePreloader) 
           img.style.width = '100%';
 
-          // img.height = img.height
-          // img.width = img.width
-
-          // console.log(img.weight)
         });
         }, imgOptions);
-
-
-        // window.addEventListener('mouseover',e =>{
-        //   if(e.target.tagName == 'IMG'){
-
-        //   console.log(`width: ${imageData.width[categoryArray.indexOf(e.target)] },
-        //   height: ${imageData.height[categoryArray.indexOf(e.target)]}`)
-
-        //   // let num1 = imageData.height[categoryArray.indexOf(e.target)];
-        //   // let num2 = imageData.width[categoryArray.indexOf(e.target)];
-        //   let num1 = 1024;
-        //   let num2 = 768;
-        //   console.log(imageData.height[categoryArray.indexOf(e.target)])
-        //   const findGCD = (a,b) =>{
-        //     if(b == 0){
-        //       return a
-        //     }
-        //     return findGCD(b , a % b)
-        //   }
-
-        //   let gcd = findGCD(num1,num2)
-        //   console.log(`aspect ratio = ${num1/ gcd } : ${num2 / gcd } ` )
-        //   }
-        // })
-
 
         categoryArray.forEach((img) => {
           imgObserver.observe(img);
         });
+
+        
+
+        if('all images are loaded and banner is visible'){
+          'getdata'
+        } 
 
         const imageOnClick = function() {
           categoryArray.forEach(image =>{ 
@@ -271,12 +231,6 @@ let Website = {
           })
         }
         imageOnClick();
-
-        window.onscroll = function(ev) {
-          if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-
-          }
-        };
 
       }
      
@@ -334,62 +288,24 @@ let Website = {
       //console.log(res)
       renderUpdate(res)
     }
-    
 
-    // document.getElementsByClassName('burger-nav')[0].addEventListener('click',  
-    // async function(ev) {
-      
-    //   getData()
-    // })
-    
+    const bannerOptions = {}
+    const bannerObserver = new IntersectionObserver((entries, bannerObserver) => {
 
-    let last = 0;
-    let scrolledDown = false;
-    let scrolledUp = false;
-    const header = document.querySelector('header');
-    const footer = document.querySelector('footer');
-    const gridContainer = document.querySelector('#grid-container');
-    window.addEventListener('scroll',()=>{
-    
-      // if(last > window.scrollY){
-      //   scrolledDown = false;
-      //   scrolledUp = true;
-      // }
-      // if(last < window.scrollY){
-      //   scrolledDown = true;
-      //   scrolledUp = false; 
-      // }
-    
-      // if(scrolledDown  && header.className == 'header-on-scroll-down'){
-      //   header.classList.remove('header-on-scroll-down')
-      //   footer.classList.add('footer-on-scroll-up')
-        
-      //   window.innerWidth > 700 ? gridContainer.style.margin = '0.2rem auto 5.25rem' : 
-      //   gridContainer.style.margin = '0.2rem auto 3.25rem';
-      // }
-      // if(scrolledUp){
-        
-      //   header.classList.add('header-on-scroll-down') 
-      //   footer.classList.remove('footer-on-scroll-up')
-      //   window.innerWidth > 700 ? gridContainer.style.margin = '4.2rem auto 3.25rem' : 
-      //   gridContainer.style.margin = '5.2rem auto 3.25rem';
-    
-      // }
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
 
-    
-      if(scrollY + innerHeight >= document.documentElement.scrollHeight){
-        //
-        
-        getData()
-        
-      }
-      last = window.scrollY;
-    })
-    
- 
+        // getData()
+
+      });
+
+    },bannerOptions);
+
+    bannerObserver.observe(banner)
+       
   }
   
-}// Website class
+}// Website object
 
 
 //invocation

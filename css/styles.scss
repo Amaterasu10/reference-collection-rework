@@ -83,6 +83,7 @@ footer {
   display: flex;
   background-color: $clr-primary-bg;
   width: 100%;
+  flex-direction: column;
   color: $clr-primary-txt;
 }
 
