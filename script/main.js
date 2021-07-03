@@ -73,7 +73,7 @@ let Website = {
       //console.log(totalRendered)
       if(totalRendered !=0 && totalRendered == data.total_results){
         
-        banner.innerHTML = `All the images has been loaded. total search result ${data.total_results}`
+        banner.innerHTML = `No more images to load. total search result ${data.total_results}`
 
       }
       else if(data.photos.length == 0){
@@ -229,6 +229,8 @@ let Website = {
               if (modalBox.classList == "close") {
                 modalBox.classList.replace("close", "open");
                 body.classList.add("no-scroll");
+
+
                 if(window.innerWidth > 1900){
                   ModalImage.src = imageData.src[categoryArray.indexOf(this)].original;
                 }
@@ -263,10 +265,13 @@ let Website = {
         modalCurrentIndex < categoryArray.length - 1 ? modalCurrentIndex += 1 : modalCurrentIndex = 0;
       }
 
-      if(window.innerWidth > 1400){
+      if(window.innerWidth > 1900){
+        ModalImage.src = imageData.src[modalCurrentIndex].original;
+      }
+      else if(window.innerWidth > 1400){
         ModalImage.src = imageData.src[modalCurrentIndex].large2x;
       }else if(window.innerWidth > 700){
-        ModalImage.src = imageData.src[modalCurrentIndex].medium;
+        ModalImage.src = imageData.src[modalCurrentIndex].large;
       }else if(window.innerWidth < 700){
         ModalImage.src = imageData.src[modalCurrentIndex].medium;
       }

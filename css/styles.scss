@@ -100,6 +100,49 @@ footer {
   }
 }
 
+
+.out-mains {
+  background-color: $clr-primary-bg-lighter;
+  min-height: 100vh;
+  color: $clr-primary-txt;
+  display: flex;
+}
+
+.form-container{
+  margin: auto;
+  width: 50%;
+  height: 60%;
+  background-color: $clr-primary-bg;
+  padding: 10px;
+
+  h2{
+    text-align: center;
+    padding:10px;
+  }
+
+  form{
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .flex-column{
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-around;
+  }
+  .form-control{
+    width: 100%;
+    padding: 5px;
+    resize:vertical;
+  }
+}
+
+
+
+
 @import "./partials/mediaqueries";
 
 
