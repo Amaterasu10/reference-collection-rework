@@ -1,24 +1,9 @@
+// Global
+
+
 @import "./partials/global/variables";
 @import "./partials/global/add-on-classes";
-@import "./partials/header";
 
-@import "./partials/home";
-
-
-
-
-
-// Modal main
-@import "./partials/gallery/main";
-@import "./partials/gallery/modal";
-
-
-
-
-
-
-
-// Global
 
 * {
   padding: 0;
@@ -57,18 +42,14 @@ h2 {
 
 .btn {
   border: 0;
-  position: fixed;
-  top: 40vh;
-  background-color: $clr--transparent-dark-gray;
-  color: $clr-primary-txt;
-  font-size: 2.5rem;
-  padding: 1vw 1.5vw;
-  z-index: 1;
-
+  background-color:$clr-secondary-bg;
+  color: $clr-secondary-txt ;
+  padding: 10px;
   &:hover {
-    transform: scale(1.02, 1.02);
+
     cursor: pointer;
-    background-color: $clr-primary-bg-lighter;
+    background-color: $clr-primary-bg-lighter ;
+    color: $clr-primary-txt;
     transition: 0.3s;
   }
 }
@@ -76,8 +57,6 @@ h2 {
 .right-btn {
   right: 0;
 }
-
-@import "./partials/mains";
 
 footer {
   display: flex;
@@ -104,8 +83,7 @@ footer {
 .out-mains {
   background-color: $clr-primary-bg-lighter;
   min-height: 100vh;
-  color: $clr-primary-txt;
-  display: flex;
+  display: flex;  
 }
 
 .form-container{
@@ -138,13 +116,28 @@ footer {
     padding: 5px;
     resize:vertical;
   }
+
+  .form-btn{
+    background-color: $clr-primary-bg-lighter;
+
+  }
 }
 
 
+//index styles
+@import "./partials/global/header";
+@import "./partials/index/home";
+@import "./partials/index/mains";
 
 
-@import "./partials/mediaqueries";
+// gallery styles
+@import "./partials/gallery/main";
+@import "./partials/gallery/modal";
 
+
+
+
+@import "./partials/global/mediaqueries";
 
 @import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital@1&family=Cormorant:ital,wght@1,700&family=Lemonada:wght@600&family=Sniglet&display=swap");
 
